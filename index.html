@@ -355,7 +355,7 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
           <div class="fc-periodo">7 dez. 1991 — 1993</div>
           <div class="fc-desc">35 perguntas sobre a ocupação, as barracas e os primeiros dias</div>
         </div>
-        <div class="fc-badge">▶ QUIZ</div>
+        <div class="fc-badge">▶ ABRIR</div>
       </div>
       <div class="fc fc2" id="btnF2">
         <div class="fc-icon">🏠</div>
@@ -365,7 +365,7 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
           <div class="fc-periodo">1994 — 2006</div>
           <div class="fc-desc">35 perguntas sobre ecumenismo, escolas e os primeiros serviços</div>
         </div>
-        <div class="fc-badge">▶ QUIZ</div>
+        <div class="fc-badge">▶ ABRIR</div>
       </div>
       <div class="fc fc3" id="btnF3">
         <div class="fc-icon">🏙️</div>
@@ -375,7 +375,7 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
           <div class="fc-periodo">2007 — 2026</div>
           <div class="fc-desc">35 perguntas sobre PAC, regularização e o Colégio Marista</div>
         </div>
-        <div class="fc-badge">▶ QUIZ</div>
+        <div class="fc-badge">▶ ABRIR</div>
       </div>
     </div>
     <!-- PORTAL DE BOTÕES -->
@@ -400,13 +400,13 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
       <div class="cr-topo">
         <div class="cr-medalha">🤖</div>
         <div>
-          <div class="cr-ey">📝 Créditos do Game</div>
+          <div class="cr-ey">📝 Créditos do Site</div>
           <div class="cr-nome">Leandro Schneider</div>
           <div class="cr-cargo">Técnico em Robótica · Idealizador do Projeto</div>
         </div>
       </div>
       <div class="cr-div"></div>
-      <p class="cr-nota">Informações obtidas a partir de <strong>sites de referência</strong>, <strong>depoimentos de lideranças comunitárias</strong>, registros históricos e documentários.<br><br>Game <strong>desenvolvido com Inteligência Artificial</strong>. Algumas informações podem estar incompletas e muitas lideranças talvez não tenham sido citadas — seus papéis são igualmente valiosos.<br><br><strong>Projeto em construção permanente.</strong> Novas versões incorporarão novos relatos.</p>
+      <p class="cr-nota">Informações obtidas a partir de <strong>sites de referência</strong>, <strong>depoimentos de lideranças comunitárias</strong>, registros históricos e documentários.<br><br>Site <strong>desenvolvido com apoio de Inteligência Artificial</strong>. Algumas informações podem estar incompletas e muitas lideranças talvez não tenham sido citadas — seus papéis são igualmente valiosos.<br><br><strong>Projeto em construção permanente.</strong> Novas versões incorporarão novos relatos.</p>
       <div style="text-align:center"><span class="cr-tag">NOVA SANTA MARTA · 35 ANOS · 1991–2026</span></div>
     </div>
     <div class="rodape-capa">Nova Santa Marta · Santa Maria (RS) · 35 Anos · 1991–2026</div>
@@ -1015,7 +1015,7 @@ function abrirIntro(n){
     '<div class="io-per">'+d.p+'</div>'+
     '<div class="io-desc">'+d.d+'</div>'+
     '<div class="io-fatos">'+fatosHtml+'</div>'+
-    '<button class="btn-start" id="btnIniciar">INICIAR QUIZ ▶</button>';
+    '<button class="btn-start" id="btnIniciar">INICIAR FASE ▶</button>';
   ov.className='intro-ov ativo '+d.c;
   document.getElementById('btnIniciar').addEventListener('click',function(){
     ov.classList.remove('ativo');
@@ -1132,7 +1132,7 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('irCQb').addEventListener('click',irConquistas);
 
   // Boas-vindas
-  setTimeout(function(){falar('Bem-vindo ao game Nova Santa Marta, trinta e cinco anos de Luta, Fé e Conquista. Escolha uma fase para iniciar o quiz histórico, ou explore o Memorial, as Conquistas e as Curiosidades da comunidade.');},1500);
+  setTimeout(function(){falar('Bem-vindo ao site Nova Santa Marta, trinta e cinco anos de Luta, Fé e Conquista. Escolha uma fase para responder às perguntas históricas, ou explore o Memorial, as Conquistas e as Curiosidades da comunidade.');},1500);
 });
 </script>
 </body>
