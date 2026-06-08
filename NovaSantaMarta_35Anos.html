@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Santa Marta — 35 Anos</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600&family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ouro:#c9a84c;--ouro2:#e8c96a;--ouro3:rgba(201,168,76,.14);
+  --verde:#2e8c3c;--verde3:rgba(46,140,60,.15);
+  --roxo:#7c3aed;--roxo3:rgba(124,58,237,.15);
+  --azul:#2563eb;--azul3:rgba(37,99,235,.15);
+  --creme:#f2e4c4;--creme2:#fdf8ee;
+  --branco:rgba(255,255,255,.92);--cinza:rgba(255,255,255,.45);
+  --fd:'Cormorant Garamond',serif;
+  --fc:'Barlow Condensed',sans-serif;
+  --fb:'Barlow',sans-serif;
+}
+html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branco);overflow:hidden;}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3);border-radius:3px}
+.tela{display:none;width:100%;height:100%;position:absolute;top:0;left:0;flex-direction:column;}
+.tela.ativa{display:flex;}
+.est{position:absolute;border-radius:50%;background:#fff;animation:ep var(--d,4s) ease-in-out infinite var(--dl,0s);}
+@keyframes ep{0%,100%{opacity:.1}50%{opacity:.9}}
+
+/* ══ CAPA ══ */
+#capa{background:radial-gradient(ellipse 140% 80% at 50% -10%,rgba(201,168,76,.09),transparent 65%),linear-gradient(175deg,#060812,#0e0f1f 45%,#120800);overflow-y:auto;align-items:center;}
+#starsEl{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.capa-inner{position:relative;z-index:2;width:100%;max-width:680px;margin:0 auto;padding:36px 20px 70px;display:flex;flex-direction:column;align-items:center;}
+.brasao{width:96px;height:96px;border-radius:50%;background:conic-gradient(from 0deg,#1a0a00,#3a1f00,#1a0a00);border:3px solid var(--ouro);display:flex;align-items:center;justify-content:center;font-size:44px;box-shadow:0 0 60px rgba(201,168,76,.35);animation:bp 3.5s ease-in-out infinite;margin-bottom:18px;}
+@keyframes bp{0%,100%{box-shadow:0 0 50px rgba(201,168,76,.25)}50%{box-shadow:0 0 80px rgba(201,168,76,.55)}}
+.eyebrow{font-family:var(--fc);font-size:10px;letter-spacing:5px;color:var(--ouro);text-transform:uppercase;margin-bottom:8px;}
+.titulo{font-family:var(--fd);font-weight:700;font-size:clamp(36px,9vw,72px);color:#fff;text-align:center;line-height:.95;margin-bottom:6px;}
+.titulo em{color:var(--ouro2);font-style:italic;}
+.subtitulo{font-family:var(--fd);font-style:italic;font-size:clamp(14px,3vw,20px);color:var(--creme);text-align:center;opacity:.85;margin-bottom:8px;}
+.num35{font-family:var(--fc);font-size:clamp(68px,17vw,120px);color:var(--ouro2);letter-spacing:6px;line-height:1;text-shadow:0 0 80px rgba(232,201,106,.45);}
+.sub35{font-family:var(--fc);font-size:16px;letter-spacing:3px;color:var(--ouro);margin-bottom:14px;}
+.div-ouro{width:200px;height:1.5px;background:linear-gradient(90deg,transparent,var(--ouro),transparent);margin:12px auto 14px;}
+.desc-capa{font-size:15px;line-height:1.75;color:var(--creme);text-align:center;max-width:500px;opacity:.82;margin-bottom:14px;}
+.marista-box{background:linear-gradient(135deg,rgba(26,42,92,.5),rgba(42,62,140,.25));border:1.5px solid rgba(100,140,220,.4);border-radius:14px;padding:15px 20px;margin-bottom:20px;text-align:center;max-width:500px;}
+.mbox-ico{font-size:28px;margin-bottom:5px;}
+.mbox-titulo{font-family:var(--fc);font-size:18px;letter-spacing:2px;color:#8ab0ff;margin-bottom:5px;}
+.mbox-desc{font-size:14px;color:var(--creme);line-height:1.65;opacity:.9;}
+.fases{display:flex;flex-direction:column;gap:11px;width:100%;margin-bottom:16px;}
+.fc{border-radius:14px;padding:18px 20px;cursor:pointer;border:2px solid transparent;transition:all .28s;display:flex;align-items:center;gap:16px;user-select:none;}
+.fc:hover{transform:translateY(-3px);}
+.fc:active{transform:scale(.98);}
+.fc1{background:linear-gradient(135deg,rgba(18,8,0,.88),rgba(40,20,0,.7));border-color:rgba(122,58,16,.45);}
+.fc1:hover{border-color:var(--ouro);box-shadow:0 6px 28px rgba(184,74,26,.25);}
+.fc2{background:linear-gradient(135deg,rgba(20,14,0,.88),rgba(50,30,0,.7));border-color:rgba(168,80,32,.45);}
+.fc2:hover{border-color:var(--ouro);}
+.fc3{background:linear-gradient(135deg,rgba(10,14,30,.88),rgba(16,24,54,.7));border-color:rgba(60,90,180,.35);}
+.fc3:hover{border-color:var(--ouro);}
+.fc-icon{font-size:46px;flex-shrink:0;}
+.fc-body{flex:1;}
+.fc-fase{font-family:var(--fc);font-size:10px;letter-spacing:3px;color:var(--ouro);opacity:.8;}
+.fc-nome{font-family:var(--fd);font-weight:700;font-size:21px;color:#fff;line-height:1.1;margin:3px 0 4px;}
+.fc-periodo{font-size:12px;color:var(--creme);opacity:.65;font-style:italic;margin-bottom:3px;}
+.fc-desc{font-size:13px;color:var(--creme);opacity:.72;line-height:1.45;}
+.fc-badge{font-family:var(--fc);font-size:13px;letter-spacing:1px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--ouro2);border-radius:20px;padding:5px 13px;white-space:nowrap;flex-shrink:0;}
+
+/* ── Botões Portal ── */
+.portal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:620px;margin-bottom:14px;}
+.btn-portal{border-radius:14px;padding:16px 14px;cursor:pointer;border:2px solid;transition:all .28s;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;user-select:none;background:rgba(255,255,255,.03);}
+.btn-portal:hover{transform:translateY(-3px);}
+.btn-portal:active{transform:scale(.97);}
+.bp-ico{font-size:32px;}
+.bp-txt{font-family:var(--fc);font-size:16px;letter-spacing:2px;font-weight:700;}
+.bp-sub{font-size:11px;opacity:.65;line-height:1.3;}
+.bp-ouro{border-color:rgba(201,168,76,.5);color:var(--ouro2);}
+.bp-ouro:hover{background:rgba(201,168,76,.1);border-color:var(--ouro);}
+.bp-verde{border-color:rgba(46,140,60,.5);color:#7fcfa0;}
+.bp-verde:hover{background:rgba(46,140,60,.12);border-color:#2e8c3c;}
+.bp-roxo{border-color:rgba(124,58,237,.5);color:#c4b5fd;}
+.bp-roxo:hover{background:rgba(124,58,237,.12);border-color:#7c3aed;}
+
+/* Créditos inline */
+.creditos-inline{width:100%;max-width:500px;background:linear-gradient(135deg,rgba(201,168,76,.10),rgba(201,168,76,.04));border:2px solid rgba(201,168,76,.4);border-radius:16px;padding:18px 20px;margin-bottom:14px;position:relative;overflow:hidden;}
+.creditos-inline::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,transparent,var(--ouro),var(--ouro2),var(--ouro),transparent);}
+.cr-topo{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.cr-medalha{width:50px;height:50px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--ouro),var(--ouro2));display:flex;align-items:center;justify-content:center;font-size:22px;}
+.cr-ey{font-family:var(--fc);font-size:9px;letter-spacing:3px;color:var(--ouro);text-transform:uppercase;margin-bottom:2px;}
+.cr-nome{font-family:var(--fd);font-weight:700;font-size:20px;color:var(--ouro2);}
+.cr-cargo{font-family:var(--fc);font-size:12px;letter-spacing:1.5px;color:var(--creme);opacity:.72;}
+.cr-div{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);margin:8px 0;}
+.cr-nota{font-size:13px;color:var(--creme);line-height:1.7;opacity:.82;font-style:italic;text-align:center;}
+.cr-nota strong{color:var(--ouro2);font-style:normal;}
+.cr-tag{display:inline-block;margin-top:8px;font-family:var(--fc);font-size:10px;letter-spacing:2px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--ouro);border-radius:20px;padding:2px 12px;}
+.rodape-capa{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:2px;text-transform:uppercase;text-align:center;}
+
+/* ══ FASES ══ */
+.fase-tela{overflow:hidden;}
+.fase-hdr{padding:9px 14px;display:flex;align-items:center;gap:10px;flex-shrink:0;backdrop-filter:blur(12px);border-bottom:1.5px solid;}
+.fh1{background:rgba(18,8,0,.9);border-color:rgba(184,74,26,.4);}
+.fh2{background:rgba(16,10,0,.9);border-color:rgba(168,80,32,.4);}
+.fh3{background:rgba(8,12,28,.9);border-color:rgba(60,90,180,.4);}
+.hdr-back{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:6px 14px;color:#fff;font-family:var(--fc);font-size:14px;letter-spacing:1px;cursor:pointer;transition:.2s;flex-shrink:0;}
+.hdr-back:hover{background:rgba(255,255,255,.18);}
+.hdr-nome{font-family:var(--fd);font-weight:700;font-size:16px;color:#fff;flex:1;}
+.hdr-prog{display:flex;align-items:center;gap:7px;flex-shrink:0;}
+.prog-txt{font-family:var(--fc);font-size:12px;color:var(--ouro);letter-spacing:1px;}
+.prog-o{width:70px;height:5px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;}
+.prog-i{height:100%;background:linear-gradient(90deg,var(--ouro),var(--ouro2));border-radius:3px;transition:width .5s;}
+.fase-corpo{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+
+/* ══ CENA VISUAL ══ */
+.scene{width:100%;height:200px;position:relative;overflow:hidden;flex-shrink:0;}
+.sc-noite{background:linear-gradient(180deg,#000610,#080a20 45%,#150800 80%,#0a0400);}
+.sc-aurora{background:linear-gradient(180deg,#0a0300,#1c0800 50%,#2a1200);}
+.sc-dia{background:linear-gradient(180deg,#0a1428,#142050 45%,#182810 80%,#0e1808);}
+.sc-cidade{background:linear-gradient(180deg,#070c20,#10183a 45%,#121e10 80%,#0a1208);}
+.sc-chao{position:absolute;bottom:0;left:0;right:0;height:65px;}
+.ch-lona{background:linear-gradient(180deg,#2a1200,#170800);}
+.ch-mad{background:linear-gradient(180deg,#321800,#1e0c00);}
+.ch-ped{background:linear-gradient(180deg,#0e1a0e,#060e06);}
+.sc-st{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.5;}
+.sc-el{position:absolute;bottom:58px;font-size:clamp(24px,4.5vw,36px);}
+.sc-el-big{font-size:clamp(38px,7vw,56px);}
+.flame-wrap{position:absolute;bottom:58px;display:flex;flex-direction:column;align-items:center;}
+.flame{width:20px;height:42px;background:radial-gradient(ellipse at 50% 100%,#ff3d00,#ff8c00 45%,#ffcc00 72%,transparent);border-radius:50% 50% 30% 30%;filter:blur(1.5px);animation:fl .5s ease-in-out infinite alternate;}
+@keyframes fl{0%{transform:scaleX(1)}100%{transform:scaleX(.8) scaleY(1.15)}}
+
+/* ══ PAINEL ══ */
+.painel{flex:1;overflow-y:auto;background:rgba(0,0,0,.83);border-top:1.5px solid rgba(201,168,76,.2);}
+
+/* ══ QUIZ ══ */
+.quiz-intro{padding:16px;background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(0,0,0,.3));border-bottom:1px solid rgba(201,168,76,.2);}
+.quiz-intro-titulo{font-family:var(--fd);font-weight:700;font-size:22px;color:var(--ouro2);margin-bottom:6px;}
+.quiz-intro-txt{font-size:14px;color:var(--creme);line-height:1.65;opacity:.88;}
+.quiz-area{padding:14px;}
+.quiz-titulo-sec{font-family:var(--fc);font-size:13px;letter-spacing:3px;color:var(--ouro);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.quiz-titulo-sec::after{content:'';flex:1;height:1px;background:rgba(201,168,76,.25);}
+.quiz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;}
+.qbtn{border-radius:14px;padding:16px 14px;cursor:pointer;border:2px solid rgba(201,168,76,.25);transition:all .25s;background:rgba(201,168,76,.05);display:flex;flex-direction:column;align-items:flex-start;gap:7px;text-align:left;min-height:110px;}
+.qbtn:hover{transform:translateY(-2px);border-color:var(--ouro);background:rgba(201,168,76,.12);}
+.qbtn:active{transform:scale(.97);}
+.qbtn.respondida{border-color:rgba(46,140,60,.6);background:rgba(46,140,60,.1);cursor:default;}
+.q-num{font-family:var(--fc);font-size:11px;letter-spacing:2px;color:var(--ouro);opacity:.7;}
+.q-ico{font-size:28px;line-height:1;}
+.q-enunciado{font-family:var(--fc);font-size:15px;font-weight:700;color:var(--creme2);line-height:1.25;}
+.q-check{font-size:18px;align-self:flex-end;}
+
+/* ══ MODAL QUIZ ══ */
+.quiz-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:900;padding:18px;}
+.quiz-modal.ativo{display:flex;}
+.quiz-modal-box{background:linear-gradient(160deg,#0e1428,#1a0e00);border:2px solid var(--ouro);border-radius:20px;padding:26px 22px;max-width:420px;width:100%;animation:qma .4s cubic-bezier(.34,1.56,.64,1);max-height:90vh;overflow-y:auto;}
+@keyframes qma{0%{transform:scale(.75);opacity:0}100%{transform:scale(1);opacity:1}}
+.qm-num{font-family:var(--fc);font-size:10px;letter-spacing:3px;color:var(--ouro);margin-bottom:4px;}
+.qm-ico{font-size:52px;text-align:center;display:block;margin-bottom:10px;}
+.qm-pergunta{font-family:var(--fd);font-weight:700;font-size:22px;color:#fff;line-height:1.2;margin-bottom:14px;text-align:center;}
+.qm-opcoes{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.qm-opcao{border-radius:10px;padding:13px 16px;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);font-family:var(--fc);font-size:16px;font-weight:700;color:var(--branco);transition:all .2s;text-align:left;letter-spacing:.3px;}
+.qm-opcao:hover{border-color:var(--ouro);background:rgba(201,168,76,.12);}
+.qm-opcao.certa{border-color:#2e8c3c!important;background:rgba(46,140,60,.22)!important;color:#7fcfa0;}
+.qm-opcao.errada{border-color:#dc2626!important;background:rgba(220,38,38,.18)!important;color:#fca5a5;}
+.qm-resposta{display:none;border-radius:12px;padding:14px 16px;margin-bottom:12px;}
+.qm-resposta.ativo{display:block;}
+.qm-resp-titulo{font-family:var(--fc);font-size:13px;letter-spacing:2px;color:var(--ouro2);margin-bottom:5px;}
+.qm-resp-txt{font-size:14px;color:var(--creme);line-height:1.65;}
+.qm-resp-certa{background:rgba(46,140,60,.15);border:1.5px solid rgba(46,140,60,.4);}
+.qm-resp-errada{background:rgba(220,38,38,.1);border:1.5px solid rgba(220,38,38,.3);}
+.qm-btns{display:flex;gap:9px;}
+.qm-btn-audio{flex:1;padding:11px;background:rgba(201,168,76,.12);border:1.5px solid rgba(201,168,76,.35);border-radius:9px;color:var(--ouro2);font-family:var(--fc);font-size:14px;letter-spacing:1.5px;cursor:pointer;transition:.2s;}
+.qm-btn-audio:hover{background:var(--ouro3);}
+.qm-btn-fechar{flex:1;padding:11px;background:var(--ouro);border:none;border-radius:9px;font-family:var(--fc);font-size:14px;letter-spacing:2px;color:#000;cursor:pointer;}
+.qm-btn-fechar:hover{background:var(--ouro2);}
+.score-bar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(0,0,0,.5);border-bottom:1px solid rgba(201,168,76,.15);font-family:var(--fc);font-size:13px;color:var(--ouro);}
+.score-num{font-size:18px;font-weight:700;color:var(--ouro2);}
+
+/* ══ NARRADOR ══ */
+.narr-wrap{padding:11px 13px;}
+.narr-row{display:flex;align-items:flex-start;gap:9px;margin-bottom:11px;}
+.narr-av{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:21px;border:2px solid;}
+.av-l{background:rgba(122,58,16,.25);border-color:#e05c20;}
+.av-m{background:rgba(168,80,32,.25);border-color:#a85020;}
+.av-p{background:rgba(60,90,180,.25);border-color:rgba(130,160,220,1);}
+.av-s{background:rgba(201,168,76,.06);border-color:var(--ouro);}
+.narr-bal{flex:1;border-radius:11px;padding:10px 13px;font-size:14px;line-height:1.68;position:relative;}
+.narr-bal::before{content:'';position:absolute;left:-8px;top:13px;border:6px solid transparent;border-right:8px solid;}
+.bl{background:rgba(122,58,16,.18);border:1.5px solid rgba(184,74,26,.4);color:var(--creme);}
+.bl::before{border-right-color:rgba(184,74,26,.4);}
+.bm{background:rgba(168,80,32,.15);border:1.5px solid rgba(168,80,32,.4);color:var(--creme);}
+.bm::before{border-right-color:rgba(168,80,32,.4);}
+.bp{background:rgba(42,62,140,.2);border:1.5px solid rgba(80,120,200,.4);color:var(--creme);}
+.bp::before{border-right-color:rgba(80,120,200,.4);}
+.bs{background:rgba(201,168,76,.06);border:1.5px solid rgba(201,168,76,.4);color:var(--creme2);}
+.bs::before{border-right-color:rgba(201,168,76,.4);}
+.narr-nome{font-family:var(--fc);font-size:10px;letter-spacing:1.5px;color:var(--ouro2);margin-bottom:4px;text-transform:uppercase;}
+
+/* ══ CONQUISTA CARD (dentro das fases) ══ */
+.cq-card{background:linear-gradient(135deg,rgba(31,92,40,.25),rgba(46,140,60,.1));border:2px solid rgba(46,140,60,.55);border-radius:13px;padding:13px 16px;margin:9px 13px;display:flex;align-items:center;gap:13px;animation:cqA .5s cubic-bezier(.34,1.56,.64,1);}
+@keyframes cqA{0%{transform:scale(.7) translateY(16px);opacity:0}100%{transform:scale(1);opacity:1}}
+.cq-ic{font-size:30px;}
+.cq-lb{font-family:var(--fc);font-size:9px;letter-spacing:3px;color:#2e8c3c;text-transform:uppercase;}
+.cq-nm{font-family:var(--fd);font-weight:700;font-size:15px;color:#fff;margin:2px 0;}
+.cq-dc{font-size:12px;color:var(--creme);opacity:.75;line-height:1.5;}
+
+/* ══ MAPA ══ */
+.mapa-box{background:rgba(0,14,4,.7);border:1.5px solid rgba(46,140,60,.3);border-radius:12px;margin:9px 13px;padding:13px;}
+.mapa-tit{font-family:var(--fc);font-size:11px;letter-spacing:3px;color:#2e8c3c;margin-bottom:9px;}
+
+/* ══ AÇÕES ══ */
+.acoes{display:flex;flex-wrap:wrap;gap:8px;padding:10px 13px;background:rgba(0,0,0,.78);border-top:1px solid rgba(255,255,255,.07);flex-shrink:0;}
+.btn-ac{flex:1;min-width:138px;border-radius:10px;padding:12px 13px;border:2px solid rgba(255,255,255,.1);cursor:pointer;transition:all .22s;background:rgba(255,255,255,.04);color:var(--branco);display:flex;align-items:center;gap:8px;}
+.btn-ac:hover{transform:translateY(-2px);}
+.btn-ac:active{transform:scale(.97);}
+.ba-b{border-color:rgba(184,74,26,.45);}
+.ba-b:hover{background:rgba(184,74,26,.18);border-color:#e05c20;}
+.ba-m{border-color:rgba(168,80,32,.45);}
+.ba-m:hover{background:rgba(168,80,32,.18);border-color:#a85020;}
+.ba-p{border-color:rgba(60,90,180,.4);}
+.ba-p:hover{background:rgba(60,90,180,.18);border-color:rgba(130,160,220,1);}
+.ba-o{border-color:rgba(201,168,76,.45);}
+.ba-o:hover{background:var(--ouro3);border-color:var(--ouro);}
+.ba-ico{font-size:20px;flex-shrink:0;}
+.ba-txt{font-family:var(--fc);font-size:15px;font-weight:700;letter-spacing:.5px;}
+
+/* ══ TELAS SECUNDÁRIAS (Memorial, Conquistas, Curiosidades) ══ */
+.tela-sec{overflow-y:auto;padding:24px 16px 60px;}
+.tsec-hdr{text-align:center;margin-bottom:24px;}
+.tsec-hdr h2{font-family:var(--fd);font-weight:700;font-size:34px;color:#fff;margin-bottom:4px;}
+.tsec-hdr p{font-size:14px;color:var(--cinza);font-style:italic;}
+.tsec-back{display:block;margin:0 auto 20px;background:transparent;border:2px solid var(--ouro);border-radius:10px;color:var(--ouro2);font-family:var(--fc);font-size:15px;letter-spacing:2px;padding:11px 30px;cursor:pointer;transition:.25s;}
+.tsec-back:hover{background:var(--ouro3);}
+
+/* ── MEMORIAL ── */
+#telaME{background:linear-gradient(160deg,#0e0a00,#1a1000);}
+.mem-sep{font-family:var(--fc);font-size:11px;letter-spacing:4px;color:var(--ouro);text-transform:uppercase;padding:8px 0 6px;margin-top:14px;display:flex;align-items:center;gap:10px;}
+.mem-sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.4),transparent);}
+.mem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;margin-bottom:10px;}
+.mem-card{background:rgba(201,168,76,.05);border:1.5px solid rgba(201,168,76,.2);border-radius:12px;padding:14px 12px;cursor:pointer;transition:all .22s;display:flex;flex-direction:column;gap:6px;min-height:92px;}
+.mem-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.1);}
+.mem-card.aberto{border-color:var(--ouro);background:rgba(201,168,76,.08);}
+.mem-ico{font-size:24px;line-height:1;}
+.mem-tit{font-family:var(--fc);font-size:15px;font-weight:700;color:var(--creme2);line-height:1.2;}
+.mem-ano{font-family:var(--fc);font-size:10px;letter-spacing:1.5px;color:var(--ouro);opacity:.8;}
+.mem-txt{display:none;font-size:14px;color:var(--creme);line-height:1.68;padding:8px 0 4px;border-top:1px solid rgba(201,168,76,.15);margin-top:3px;}
+.mem-card.aberto .mem-txt{display:block;}
+.mem-audio{display:none;margin-top:7px;width:100%;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:7px;padding:7px;color:var(--ouro2);font-family:var(--fc);font-size:13px;letter-spacing:1px;cursor:pointer;transition:.2s;text-align:center;}
+.mem-audio:hover{background:rgba(201,168,76,.22);}
+.mem-card.aberto .mem-audio{display:block;}
+
+/* ── CONQUISTAS ── */
+#telaCQ{background:linear-gradient(160deg,#060812,#0e0f1f);}
+.cq-grid-tela{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;max-width:660px;margin:0 auto 24px;}
+.cqt-item{background:rgba(46,140,60,.08);border:1.5px solid rgba(46,140,60,.3);border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;cursor:pointer;transition:.25s;min-height:100px;}
+.cqt-item:hover{transform:translateY(-2px);border-color:rgba(46,140,60,.6);background:rgba(46,140,60,.15);}
+.cqt-item.aberto{border-color:#2e8c3c;background:rgba(46,140,60,.13);}
+.cqt-ico{font-size:26px;}
+.cqt-nm{font-family:var(--fc);font-size:15px;font-weight:700;color:var(--branco);line-height:1.3;}
+.cqt-yr{font-family:var(--fc);font-size:10px;color:var(--ouro);letter-spacing:1px;}
+.cqt-desc{display:none;font-size:13px;color:var(--creme);line-height:1.65;padding:8px 0 4px;border-top:1px solid rgba(46,140,60,.2);margin-top:3px;}
+.cqt-item.aberto .cqt-desc{display:block;}
+.cqt-audio{display:none;margin-top:6px;width:100%;background:rgba(46,140,60,.12);border:1px solid rgba(46,140,60,.4);border-radius:7px;padding:7px;color:#7fcfa0;font-family:var(--fc);font-size:13px;letter-spacing:1px;cursor:pointer;text-align:center;transition:.2s;}
+.cqt-audio:hover{background:rgba(46,140,60,.25);}
+.cqt-item.aberto .cqt-audio{display:block;}
+.btn-volta-cq{display:block;margin:0 auto;background:transparent;border:2px solid var(--ouro);border-radius:10px;color:var(--ouro2);font-family:var(--fc);font-size:15px;letter-spacing:2px;padding:11px 30px;cursor:pointer;transition:.25s;}
+.btn-volta-cq:hover{background:var(--ouro3);}
+
+/* ── CURIOSIDADES ── */
+#telaCU{background:linear-gradient(160deg,#06120a,#0e1f10);}
+.cut-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;max-width:680px;margin:0 auto 22px;}
+.cut-sep{grid-column:1/-1;display:flex;align-items:center;gap:9px;font-family:var(--fc);font-size:10px;letter-spacing:3px;color:var(--ouro);text-transform:uppercase;padding:5px 0 2px;margin-top:8px;}
+.cut-sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent);}
+.cut-sep.ct{color:#6ab0ff;}.cut-sep.ct::after{background:linear-gradient(90deg,rgba(106,176,255,.3),transparent);}
+.cut-sep.cf{color:#c08fff;}.cut-sep.cf::after{background:linear-gradient(90deg,rgba(192,143,255,.3),transparent);}
+.cut-sep.cs{color:#7fcfa0;}.cut-sep.cs::after{background:linear-gradient(90deg,rgba(127,207,160,.3),transparent);}
+.cut-card{background:rgba(46,140,60,.08);border:1.5px solid rgba(46,140,60,.25);border-radius:12px;padding:14px 12px;cursor:pointer;transition:.25s;display:flex;flex-direction:column;gap:6px;min-height:82px;}
+.cut-card:hover{transform:translateY(-2px);border-color:rgba(46,140,60,.55);}
+.cut-card.aberto{border-color:#2e8c3c;background:rgba(46,140,60,.18);}
+.cut-ico{font-size:22px;line-height:1;}
+.cut-tit{font-family:var(--fc);font-size:15px;font-weight:700;color:var(--creme2);line-height:1.2;}
+.cut-txt{display:none;font-size:14px;color:var(--creme);line-height:1.68;padding:8px 0 4px;border-top:1px solid rgba(46,140,60,.2);margin-top:3px;}
+.cut-card.aberto .cut-txt{display:block;}
+.cut-audio{display:none;margin-top:6px;width:100%;background:rgba(46,140,60,.15);border:1px solid rgba(46,140,60,.4);border-radius:7px;padding:7px;color:#7fcfa0;font-family:var(--fc);font-size:13px;letter-spacing:1px;cursor:pointer;text-align:center;transition:.2s;}
+.cut-audio:hover{background:rgba(46,140,60,.28);}
+.cut-card.aberto .cut-audio{display:block;}
+.btn-volta-v{display:block;margin:0 auto;background:transparent;border:2px solid #2e8c3c;border-radius:10px;color:#2e8c3c;font-family:var(--fc);font-size:15px;letter-spacing:2px;padding:11px 30px;cursor:pointer;transition:.25s;}
+.btn-volta-v:hover{background:var(--verde3);}
+
+/* ══ INTRO OVERLAY ══ */
+.intro-ov{position:fixed;inset:0;z-index:900;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:28px;}
+.intro-ov.ativo{display:flex;}
+.il{background:linear-gradient(160deg,#120400,#2a1000);}
+.im{background:linear-gradient(160deg,#1a0c00,#3a1c00);}
+.ip{background:linear-gradient(160deg,#080c24,#121c48);}
+.io-ic{font-size:74px;animation:ifl 2.2s ease-in-out infinite;}
+@keyframes ifl{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.io-num{font-family:var(--fc);font-size:10px;letter-spacing:5px;color:var(--ouro);}
+.io-tit{font-family:var(--fd);font-weight:700;font-size:clamp(28px,8vw,55px);color:#fff;text-align:center;line-height:1.05;}
+.io-per{font-family:var(--fc);font-size:17px;letter-spacing:3px;color:var(--ouro2);}
+.io-desc{font-size:14px;color:var(--creme);text-align:center;max-width:360px;line-height:1.65;opacity:.85;}
+.io-fatos{background:rgba(0,0,0,.4);border-radius:12px;padding:12px 16px;max-width:360px;width:100%;border:1px solid rgba(201,168,76,.25);}
+.io-fato{font-size:13px;color:var(--creme);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:8px;}
+.io-fato:last-child{border-bottom:none;}
+.btn-start{background:linear-gradient(135deg,var(--ouro),var(--ouro2));color:#000;border:none;border-radius:12px;padding:14px 42px;font-family:var(--fc);font-size:20px;letter-spacing:3px;cursor:pointer;transition:.25s;margin-top:6px;box-shadow:0 4px 24px rgba(201,168,76,.4);}
+.btn-start:hover{transform:translateY(-3px);box-shadow:0 8px 36px rgba(201,168,76,.6);}
+
+/* ══ MODAL PERSONAGEM ══ */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:800;padding:18px;}
+.modal-bg.ativo{display:flex;}
+.modal-box{background:linear-gradient(160deg,#0e0f28,#141630);border:2px solid var(--ouro);border-radius:18px;padding:26px 22px;max-width:390px;width:100%;animation:mba .4s cubic-bezier(.34,1.56,.64,1);}
+@keyframes mba{0%{transform:scale(.72);opacity:0}100%{transform:scale(1);opacity:1}}
+.mb-av{font-size:52px;text-align:center;margin-bottom:10px;}
+.mb-nm{font-family:var(--fd);font-weight:700;font-size:22px;color:var(--ouro2);text-align:center;}
+.mb-pl{font-size:11px;color:var(--cinza);text-align:center;letter-spacing:2px;text-transform:uppercase;margin:4px 0 12px;}
+.mb-dv{width:48px;height:1.5px;background:linear-gradient(90deg,transparent,var(--ouro),transparent);margin:0 auto 12px;}
+.mb-bio{font-size:14px;color:var(--creme);line-height:1.72;text-align:center;margin-bottom:12px;}
+.mb-fr{background:rgba(201,168,76,.06);border-left:3px solid var(--ouro);padding:9px 13px;border-radius:0 8px 8px 0;font-style:italic;font-size:13px;color:var(--creme2);margin-bottom:14px;line-height:1.6;}
+.mb-btn-au{width:100%;padding:10px;background:rgba(201,168,76,.12);border:1.5px solid rgba(201,168,76,.35);border-radius:9px;color:var(--ouro2);font-family:var(--fc);font-size:14px;letter-spacing:1.5px;cursor:pointer;transition:.2s;margin-bottom:9px;}
+.mb-btn-au:hover{background:var(--ouro3);}
+.mb-btn-fc{width:100%;padding:11px;background:var(--ouro);border:none;border-radius:10px;font-family:var(--fc);font-size:15px;letter-spacing:2px;color:#000;cursor:pointer;}
+.mb-btn-fc:hover{background:var(--ouro2);}
+
+/* ══ ÁUDIO ══ */
+.audio-ind{position:fixed;bottom:12px;right:12px;z-index:999;background:rgba(0,0,0,.88);border:1.5px solid var(--ouro);border-radius:30px;padding:6px 13px;display:flex;align-items:center;gap:7px;font-family:var(--fc);font-size:11px;letter-spacing:1.5px;color:var(--ouro);opacity:0;transition:opacity .3s;pointer-events:none;}
+.audio-ind.on{opacity:1;}
+.aw{display:flex;gap:2px;align-items:flex-end;height:13px;}
+.aw span{width:3px;background:var(--ouro);border-radius:2px;animation:wv var(--d,.5s) ease-in-out infinite alternate;}
+@keyframes wv{0%{height:2px}100%{height:13px}}
+
+@media(max-width:450px){
+  .quiz-grid,.mem-grid,.cq-grid-tela,.cut-grid{grid-template-columns:repeat(2,1fr);}
+  .portal-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ★ CAPA PORTAL -->
+<div id="capa" class="tela ativa">
+  <div id="starsEl"></div>
+  <div class="capa-inner">
+    <div class="brasao">⛺</div>
+    <div class="eyebrow">Celebração dos 35 Anos · 1991–2026</div>
+    <h1 class="titulo">Nova <em>Santa Marta</em></h1>
+    <p class="subtitulo">Uma comunidade que nasceu na madrugada e construiu o futuro</p>
+    <div class="num35">35</div>
+    <div class="sub35">ANOS DE LUTA · FÉ · CONQUISTA</div>
+    <div class="div-ouro"></div>
+    <p class="desc-capa">Em <strong>7 de dezembro de 1991</strong>, famílias organizadas pelo MNLM derrubaram as cercas da Fazenda Santa Marta na Região Oeste de Santa Maria (RS). Do campo aberto e das barracas de lona preta, nasceu uma das maiores ocupações urbanas organizadas da América Latina.</p>
+    <div class="marista-box">
+      <div class="mbox-ico">🎓</div>
+      <div class="mbox-titulo">CONQUISTA HISTÓRICA DE 2026</div>
+      <div class="mbox-desc">O <strong>Colégio Marista Santa Marta</strong> inaugura o <strong>Ensino Médio</strong> — completando um ciclo educacional aguardado por anos pela comunidade. Um marco que a comunidade esperou com muito amor e esperança, pois já existia Ensino Médio em outras escolas do bairro, mas era um desejo especial ver o Marista — que acompanhou gerações desde a infância — oferecer também o ciclo completo de formação para os jovens da Nova Santa Marta.</div>
+    </div>
+    <div class="fases">
+      <div class="fc fc1" id="btnF1">
+        <div class="fc-icon">⛺</div>
+        <div class="fc-body">
+          <div class="fc-fase">FASE 1 · A MADRUGADA</div>
+          <div class="fc-nome">Cidade de Lona</div>
+          <div class="fc-periodo">7 dez. 1991 — 1993</div>
+          <div class="fc-desc">35 perguntas sobre a ocupação, as barracas e os primeiros dias</div>
+        </div>
+        <div class="fc-badge">▶ QUIZ</div>
+      </div>
+      <div class="fc fc2" id="btnF2">
+        <div class="fc-icon">🏠</div>
+        <div class="fc-body">
+          <div class="fc-fase">FASE 2 · O CRESCIMENTO</div>
+          <div class="fc-nome">Cidade de Madeira</div>
+          <div class="fc-periodo">1994 — 2006</div>
+          <div class="fc-desc">35 perguntas sobre ecumenismo, escolas e os primeiros serviços</div>
+        </div>
+        <div class="fc-badge">▶ QUIZ</div>
+      </div>
+      <div class="fc fc3" id="btnF3">
+        <div class="fc-icon">🏙️</div>
+        <div class="fc-body">
+          <div class="fc-fase">FASE 3 · A CONSOLIDAÇÃO</div>
+          <div class="fc-nome">Cidade de Concreto</div>
+          <div class="fc-periodo">2007 — 2026</div>
+          <div class="fc-desc">35 perguntas sobre PAC, regularização e o Colégio Marista</div>
+        </div>
+        <div class="fc-badge">▶ QUIZ</div>
+      </div>
+    </div>
+    <!-- PORTAL DE BOTÕES -->
+    <div class="portal-grid">
+      <button class="btn-portal bp-ouro" id="btnCQ">
+        <span class="bp-ico">🏆</span>
+        <span class="bp-txt">CONQUISTAS</span>
+        <span class="bp-sub">31 conquistas da comunidade</span>
+      </button>
+      <button class="btn-portal bp-verde" id="btnCU">
+        <span class="bp-ico">🔍</span>
+        <span class="bp-txt">CURIOSIDADES</span>
+        <span class="bp-sub">Fatos, tecnologia e lideranças</span>
+      </button>
+      <button class="btn-portal bp-roxo" id="btnME">
+        <span class="bp-ico">📜</span>
+        <span class="bp-txt">MEMORIAL</span>
+        <span class="bp-sub">Memórias das 3 fases</span>
+      </button>
+    </div>
+    <div class="creditos-inline">
+      <div class="cr-topo">
+        <div class="cr-medalha">🤖</div>
+        <div>
+          <div class="cr-ey">📝 Créditos do Game</div>
+          <div class="cr-nome">Leandro Schneider</div>
+          <div class="cr-cargo">Técnico em Robótica · Idealizador do Projeto</div>
+        </div>
+      </div>
+      <div class="cr-div"></div>
+      <p class="cr-nota">Informações obtidas a partir de <strong>sites de referência</strong>, <strong>depoimentos de lideranças comunitárias</strong>, registros históricos e documentários.<br><br>Game <strong>desenvolvido com Inteligência Artificial</strong>. Algumas informações podem estar incompletas e muitas lideranças talvez não tenham sido citadas — seus papéis são igualmente valiosos.<br><br><strong>Projeto em construção permanente.</strong> Novas versões incorporarão novos relatos.</p>
+      <div style="text-align:center"><span class="cr-tag">NOVA SANTA MARTA · 35 ANOS · 1991–2026</span></div>
+    </div>
+    <div class="rodape-capa">Nova Santa Marta · Santa Maria (RS) · 35 Anos · 1991–2026</div>
+  </div>
+</div>
+
+<!-- ★ FASE 1 — CIDADE DE LONA -->
+<div id="tela1" class="tela fase-tela">
+  <div class="fase-hdr fh1">
+    <button class="hdr-back" id="v1">← VOLTAR</button>
+    <div class="hdr-nome">⛺ Fase 1 — Cidade de Lona</div>
+    <div class="hdr-prog"><span class="prog-txt" id="pl1">0/?</span><div class="prog-o"><div class="prog-i" id="pb1" style="width:0%"></div></div></div>
+  </div>
+  <div class="fase-corpo">
+    <div class="painel">
+      <div class="quiz-intro">
+        <div class="quiz-intro-titulo">⛺ A Madrugada que Mudou Tudo</div>
+        <div class="quiz-intro-txt">7 de dezembro de 1991. Meses de reuniões secretas culminaram na ocupação da Fazenda Santa Marta. Famílias saíram na madrugada, enfrentaram a polícia, montaram barracas de lona preta e fundaram o que se tornaria um dos maiores bairros populares de Santa Maria. Teste seus conhecimentos sobre esta história épica.</div>
+      </div>
+      <div class="score-bar">🏅 PONTOS: <span class="score-num" id="sc1">0</span> &nbsp;·&nbsp; RESPONDIDAS: <span id="rc1">0</span>/<span id="tot1">0</span></div>
+      <div class="quiz-area">
+        <div class="quiz-titulo-sec" id="qtit1">🎯 PERGUNTAS — CIDADE DE LONA</div>
+        <div class="quiz-grid" id="qg1"></div>
+      </div>
+    </div>
+    <div class="acoes">
+      <button class="btn-ac ba-b" id="bp_fernando"><span class="ba-ico">🧑‍🦳</span><span class="ba-txt">Fernando Menezes</span></button>
+      <button class="btn-ac ba-o" id="irF2b"><span class="ba-ico">🏠</span><span class="ba-txt">Fase 2 — Madeira →</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ★ FASE 2 — CIDADE DE MADEIRA -->
+<div id="tela2" class="tela fase-tela">
+  <div class="fase-hdr fh2">
+    <button class="hdr-back" id="v2">← VOLTAR</button>
+    <div class="hdr-nome">🏠 Fase 2 — Cidade de Madeira</div>
+    <div class="hdr-prog"><span class="prog-txt" id="pl2">0/?</span><div class="prog-o"><div class="prog-i" id="pb2" style="width:0%"></div></div></div>
+  </div>
+  <div class="fase-corpo">
+    <div class="painel">
+      <div class="quiz-intro">
+        <div class="quiz-intro-titulo">🏠 O Bairro Toma Forma</div>
+        <div class="quiz-intro-txt">De 1994 a 2006, a Nova Santa Marta deixou de ser um campo de lonas e virou um bairro de madeira, com escolas, creche, centro ecuménico e os primeiros serviços. Uma fase de conquistas cotidianas e de organização coletiva extraordinária.</div>
+      </div>
+      <div class="score-bar">🏅 PONTOS: <span class="score-num" id="sc2">0</span> &nbsp;·&nbsp; RESPONDIDAS: <span id="rc2">0</span>/<span id="tot2">0</span></div>
+      <div class="quiz-area">
+        <div class="quiz-titulo-sec" id="qtit2">🎯 PERGUNTAS — CIDADE DE MADEIRA</div>
+        <div class="quiz-grid" id="qg2"></div>
+      </div>
+    </div>
+    <div class="acoes">
+      <button class="btn-ac ba-m" id="bp_pedro"><span class="ba-ico">🧑</span><span class="ba-txt">Pedro Zoé</span></button>
+      <button class="btn-ac ba-o" id="irF3b"><span class="ba-ico">🏙️</span><span class="ba-txt">Fase 3 — Concreto →</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ★ FASE 3 — CIDADE DE CONCRETO -->
+<div id="tela3" class="tela fase-tela">
+  <div class="fase-hdr fh3">
+    <button class="hdr-back" id="v3">← VOLTAR</button>
+    <div class="hdr-nome">🏙️ Fase 3 — Cidade de Concreto</div>
+    <div class="hdr-prog"><span class="prog-txt" id="pl3">0/?</span><div class="prog-o"><div class="prog-i" id="pb3" style="width:0%"></div></div></div>
+  </div>
+  <div class="fase-corpo">
+    <div class="painel">
+      <div class="quiz-intro">
+        <div class="quiz-intro-titulo">🏙️ A Cidade Consolidada</div>
+        <div class="quiz-intro-txt">De 2007 a 2026, o PAC de R$42 milhões transformou o bairro. Esgoto, asfalto, regularização fundiária, o CMID na vanguarda da tecnologia social e o Colégio Marista completando seu ciclo educacional. Uma comunidade que chegou ao concreto sem esquecer a lona.</div>
+      </div>
+      <div class="score-bar">🏅 PONTOS: <span class="score-num" id="sc3">0</span> &nbsp;·&nbsp; RESPONDIDAS: <span id="rc3">0</span>/<span id="tot3">0</span></div>
+      <div class="quiz-area">
+        <div class="quiz-titulo-sec" id="qtit3">🎯 PERGUNTAS — CIDADE DE CONCRETO</div>
+        <div class="quiz-grid" id="qg3"></div>
+      </div>
+    </div>
+    <div class="acoes">
+      <button class="btn-ac ba-p" id="bp_emilia"><span class="ba-ico">👩</span><span class="ba-txt">Emilia Gross</span></button>
+      <button class="btn-ac ba-o" id="irCQb"><span class="ba-ico">🏆</span><span class="ba-txt">Ver Conquistas</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ★ MEMORIAL -->
+<div id="telaME" class="tela tela-sec">
+  <button class="tsec-back" id="vME">← VOLTAR</button>
+  <div class="tsec-hdr"><h2>📜 Memorial da Nova Santa Marta</h2><p>Memórias organizadas por período histórico — 1991 a 2026</p></div>
+  <div id="gME"></div>
+</div>
+
+<!-- ★ CONQUISTAS -->
+<div id="telaCQ" class="tela tela-sec">
+  <button class="tsec-back" id="vCQ">← VOLTAR</button>
+  <div class="tsec-hdr"><h2>🏆 Conquistas da Nova Santa Marta</h2><p>35 anos de luta, organização e vitória coletiva — 1991 a 2026</p></div>
+  <div class="cq-grid-tela" id="gCQ"></div>
+</div>
+
+<!-- ★ CURIOSIDADES -->
+<div id="telaCU" class="tela tela-sec">
+  <button class="tsec-back" id="vCU">← VOLTAR</button>
+  <div class="tsec-hdr"><h2>🔍 Curiosidades da Nova Santa Marta</h2><p>Lideranças, tecnologia, fé e resistência — 1991 a 2026</p></div>
+  <div class="cut-grid" id="gCU"></div>
+</div>
+
+<!-- INTRO OVERLAY -->
+<div id="introOv" class="intro-ov"></div>
+
+<!-- MODAL PERSONAGEM -->
+<div id="modalBg" class="modal-bg"><div class="modal-box" id="modalBox"></div></div>
+
+<!-- MODAL QUIZ -->
+<div id="quizModal" class="quiz-modal">
+  <div class="quiz-modal-box" id="quizModalBox"></div>
+</div>
+
+<!-- ÁUDIO -->
+<div class="audio-ind" id="audioInd">
+  <div class="aw"><span style="--d:.35s"></span><span style="--d:.5s;animation-delay:.1s"></span><span style="--d:.42s;animation-delay:.18s"></span><span style="--d:.6s;animation-delay:.06s"></span></div>
+  🔊 NARRANDO
+</div>
+<script>
+// ═══════════════════════════════════════════
+// NOVA SANTA MARTA 35 ANOS — JavaScript
+// ═══════════════════════════════════════════
+
+// ── Áudio ──────────────────────────────────
+var synth=null, audioEl=null;
+function limpar(t){return(t||'').replace(/<[^>]+>/g,' ').replace(/(\d{4})\+/g,'$1').replace(/\+/g,'').replace(/[→]/g,' para ').replace(/[·—]/g,', ').replace(/\s+/g,' ').trim();}
+function pararAudio(){
+  if(synth)synth.cancel();
+  if(audioEl)audioEl.classList.remove('on');
+}
+function vozPadraoPtBr(){
+  if(!synth)return null;
+  var vz=synth.getVoices();
+  var preferidas=['Luciana','Francisca','Maria','Vitória','Vitoria','Google português do Brasil','Microsoft Maria'];
+  for(var p=0;p<preferidas.length;p++){
+    for(var i=0;i<vz.length;i++){
+      if((vz[i].lang||'').toLowerCase().startsWith('pt')&&(vz[i].name||'').toLowerCase().indexOf(preferidas[p].toLowerCase())!==-1)return vz[i];
+    }
+  }
+  for(var j=0;j<vz.length;j++)if((vz[j].lang||'').toLowerCase()==='pt-br')return vz[j];
+  for(var k=0;k<vz.length;k++)if((vz[k].lang||'').toLowerCase().startsWith('pt'))return vz[k];
+  return null;
+}
+function falar(txt){
+  if(!synth)return; pararAudio();
+  var s=limpar(txt); if(!s)return;
+  setTimeout(function(){
+    var u=new SpeechSynthesisUtterance(s);
+    u.lang='pt-BR';u.rate=0.9;u.pitch=1.05;u.volume=1;
+    var voz=vozPadraoPtBr();if(voz)u.voice=voz;
+    u.onstart=function(){if(audioEl)audioEl.classList.add('on');};
+    u.onend=u.onerror=function(){if(audioEl)audioEl.classList.remove('on');};
+    synth.speak(u);
+  },80);
+}
+
+// ── Telas ───────────────────────────────────
+function ir(id){document.querySelectorAll('.tela').forEach(function(t){t.classList.remove('ativa');});var el=document.getElementById(id);if(el){el.classList.add('ativa');el.scrollTop=0;}}
+
+// ── Estrelas ────────────────────────────────
+function estrelas(){var c=document.getElementById('starsEl');if(!c)return;for(var i=0;i<70;i++){var s=document.createElement('div');s.className='est';var sz=Math.random()*2+0.8;s.style.cssText='width:'+sz+'px;height:'+sz+'px;top:'+Math.random()*100+'%;left:'+Math.random()*100+'%;--d:'+(Math.random()*4+2.5)+'s;--dl:'+(Math.random()*5)+'s;';c.appendChild(s);}}
+
+// ── Personagens ─────────────────────────────
+var PERSONAGENS={
+  fernando:{av:'🧑‍🦳',nm:'Fernando Menezes',pl:'Coordenador MNLM · Vereador (1997–2000) · Secretário (2001–2004)',bio:'Líder histórico do Movimento Nacional de Luta pela Moradia em Santa Maria. Coordenou dois anos de reuniões antes da ocupação de 7 de dezembro de 1991.',fr:'De todas as minhas experiências políticas, nenhuma se compara aos meses com aquelas famílias. Aprendi que quanto mais conheço os ricos, mais amo a solidariedade dos mais pobres.'},
+  pedro:{av:'🧑',nm:'Pedro Zoé',pl:'Liderança ecuménica · Coordenador do CEBI · Memória oral da ocupação',bio:'Pedro Zoé foi peça central no ecumenismo da Nova Santa Marta. Atuou ao lado do Pastor Cláudio Morais, Padre Neu Ortiz e Padre Carlos Menegáis. Responsável pela construção da Creche Sinos de Belém.',fr:'O ecumenismo foi uma presença de fé, de esperança. O fundamento era: ser diferente não é ser contrário. Cada um mantém sua identidade religiosa, mas trabalhamos pautas comuns para a promoção da vida.'},
+  emilia:{av:'👩',nm:'Emilia Gross',pl:'Moradora desde 1993 · Alto da Boa Vista · Liderança comunitária',bio:'Chegou em 1993 com dois filhos pequenos. Enfrentou preconceito e dificuldades extremas. Tornou-se uma das vozes mais fortes da comunidade. Hoje vê seus filhos bem-sucedidos.',fr:'A luta da Santa Marta está no nosso sangue e jamais pararemos. Foi muito satisfatório ver meus filhos transformados em pessoas com garra, honestidade e solidariedade.'},
+  suelen:{av:'👩‍🎓',nm:'Suelen Aires Gonçalves',pl:'Chegou em 1995 · Ciências Sociais UFSM · Doutoranda Sociologia UFRGS',bio:'Chegou criança de Uruguaiana em 1995. Cresceu sem escola no bairro. Formou-se em Ciências Sociais na UFSM e é doutoranda em Sociologia na UFRGS.',fr:'Ter morado na Nova Santa Marta foi central em minha vida. Escolhi minha formação para contribuir através da ciência. A ocupação me fez quem eu sou.'}
+};
+
+function verPersonagem(id){
+  var p=PERSONAGENS[id];if(!p)return;
+  var box=document.getElementById('modalBox');
+  box.innerHTML='<div class="mb-av">'+p.av+'</div><div class="mb-nm">'+p.nm+'</div><div class="mb-pl">'+p.pl+'</div><div class="mb-dv"></div><div class="mb-bio">'+p.bio+'</div><div class="mb-fr">'+p.fr+'</div><button class="mb-btn-au" id="mbAu">🔊 OUVIR DEPOIMENTO</button><button class="mb-btn-fc" id="mbFc">FECHAR</button>';
+  document.getElementById('mbAu').addEventListener('click',function(){falar(p.nm+'. '+p.bio+'. '+p.fr);});
+  document.getElementById('mbFc').addEventListener('click',fecharModal);
+  document.getElementById('modalBg').classList.add('ativo');
+}
+function fecharModal(){document.getElementById('modalBg').classList.remove('ativo');pararAudio();}
+
+// ── QUIZ DATA ───────────────────────────────
+var QUIZ={
+1:[
+  {i:'🏘️',q:'Onde aconteceram as primeiras reuniões secretas das famílias que planejavam a ocupação?',o:['Em escolas públicas do Centro','Em sindicatos, igrejas e casas de líderes na periferia','No gabinete de um deputado federal','No quartel da Brigada Militar'],c:1,r:'As reuniões foram realizadas de forma discreta entre abril de 1990 e dezembro de 1991, em sindicatos, igrejas e casas de lideranças espalhadas pela periferia de Santa Maria. Fernando Menezes coordenou todo este planejamento pelo MNLM.'},
+  {i:'⚖️',q:'Qual lei estadual de 1984 havia prometido os terrenos da Fazenda Santa Marta para moradias populares — e nunca foi cumprida?',o:['Lei Estadual 7.933','Lei Estadual 5.500','Decreto Municipal 1.991','Lei Federal de Habitação 8.036'],c:0,r:'A Lei Estadual 7.933/1984 autorizou a doação de 340 hectares da Fazenda Santa Marta à Cohab para construção de habitação popular em 5 anos. Após 7 anos, nada havia sido feito. Este descumprimento deu legitimidade jurídica à ocupação.'},
+  {i:'📅',q:'Em que data histórica ocorreu a ocupação da Fazenda Santa Marta?',o:['1º de maio de 1991','7 de dezembro de 1991','15 de novembro de 1990','25 de dezembro de 1991'],c:1,r:'A ocupação ocorreu na madrugada de 7 de dezembro de 1991, uma sexta-feira para sábado. A data ficou eternizada no nome da primeira vila: Vila 7 de Dezembro.'},
+  {i:'⛪',q:'Qual era o ponto de concentração das famílias antes da caminhada até a fazenda?',o:['Praça Saldanha Marinho (Centro)','Escola Estadual Olavo Bilac','Paróquia São João Evangelista — Vila Caramelo','Sindicato dos Trabalhadores Rurais'],c:2,r:'As famílias se concentraram na Paróquia São João Evangelista, localizada na Vila Caramelo, na Região Oeste de Santa Maria. Era o ponto de partida da caminhada histórica em direção à Fazenda Santa Marta.'},
+  {i:'🚶',q:'Como os grupos se organizaram na noite da ocupação para não chamar a atenção das autoridades?',o:['Foram todos juntos num ônibus fretado','Se dividiram em pequenos grupos que saíram em horários diferentes','Esperaram a polícia dormir e saíram correndo','Usaram fantasias para se disfarçar'],c:1,r:'Segundo relatos históricos, as famílias se dividiram em pequenos grupos que partiram em horários escalonados, seguindo rotas diferentes pela Região Oeste, para não levantar suspeitas da polícia e da Brigada Militar.'},
+  {i:'🗺️',q:'Qual foi o trajeto da caminhada histórica até a Fazenda Santa Marta?',o:['Pelo Centro da cidade, pela Avenida Rio Branco','Pela Avenida Medianeira, passando pelo campus da UFSM','Pela Região Oeste, sem passar pelo Centro — direto para a fazenda','Pelo Bairro Nossa Senhora de Fátima até a BR-287'],c:2,r:'O trajeto foi exclusivamente pela Região Oeste de Santa Maria, sem passar pelo Centro da cidade. Uma rota periférica direta da Vila Caramelo até a Fazenda Santa Marta, próxima à BR-287.'},
+  {i:'👮',q:'Segundo relatos do morador Elson, o que aconteceu quando a polícia parou um dos grupos que caminhavam?',o:['Todos foram presos e levados para a delegacia','O policial perguntou para onde iam e o ocupante disse que era para um evento religioso','O grupo fugiu pelos campos','A polícia escoltou o grupo até a fazenda'],c:1,r:'Segundo o relato de Elson, preservado nos documentários sobre a ocupação, quando a polícia parou os caminhantes, um dos ocupantes disse que estavam indo para um evento religioso. A resposta fazia sentido porque os grupos caminhavam com velas e desarmou a suspeita.'},
+  {i:'⛺',q:'Quantas famílias participaram da primeira noite de ocupação em 7 de dezembro de 1991?',o:['Mais de 500 famílias','Cerca de 50 famílias pioneiras','Apenas 10 famílias líderes','Mais de 2.000 famílias'],c:1,r:'Pouco mais de 50 famílias compuseram o grupo pioneiro da primeira noite. Elas foram as primeiras a derrubar as cercas e montar as barracas de lona preta no campo da Fazenda Santa Marta.'},
+  {i:'🪡',q:'Com que tipo de material as primeiras famílias construíram seus abrigos na noite da ocupação?',o:['Tijolos e cimento trazidos de caminhão','Madeira retirada da fazenda','Lona preta, estacas e barbante','Palha e bambu da região'],c:2,r:'As primeiras barracas foram erguidas com lona preta, estacas de madeira e barbante. Era o material que cada família conseguia carregar a pé. Este período ficou para sempre conhecido como a "Cidade de Lona".'},
+  {i:'🚜',q:'O que a polícia fez para tentar impedir a chegada de mais ocupantes no dia seguinte à ocupação?',o:['Fechou todas as ruas com grades de aço','Abriu valas (valetas) nas estradas para que caminhões não pudessem cruzar a divisa da fazenda','Colocou cachorros farejadores no perímetro','Usou helicópteros para dispersar as pessoas'],c:1,r:'A Brigada Militar abriu valas nas vias de acesso para impedir que caminhões transportando novas famílias e materiais cruzassem a divisa da Fazenda Santa Marta. Mesmo assim, os novos ocupantes encontraram caminhos alternativos e chegaram a pé pelos campos.'},
+  {i:'👨‍👩‍👧‍👦',q:'O que aconteceu nos dias seguintes à primeira noite de ocupação?',o:['A maioria desistiu e voltou para casa','Mais famílias continuaram chegando por caminhos alternativos','O governo entregou casas para todos','A polícia demoliu todas as barracas'],c:1,r:'Nos dias e semanas seguintes, centenas e depois milhares de novas famílias foram chegando. Mesmo com as valas abertas pela polícia, os ocupantes encontraram rotas alternativas pelos campos e a comunidade cresceu rapidamente.'},
+  {i:'🌙',q:'Como foi a primeira noite de Natal das famílias nas barracas de lona, em dezembro de 1991?',o:['Festiva, com muita música e comida farta','Sofrida, sob frio intenso, sem luz elétrica, sem água encanada, mas com muita esperança e solidariedade','Com fogos de artifício e presentes para todas as crianças','Tranquila, pois já havia estrutura básica instalada'],c:1,r:'O primeiro Natal nas barracas foi marcado pelo frio do inverno gaúcho, ausência total de infraestrutura, mas também por uma solidariedade extraordinária entre as famílias. As crianças receberam o que as famílias conseguiram reunir, e a esperança era o maior presente.'},
+  {i:'💧',q:'Onde os primeiros moradores buscavam água nos meses iniciais da ocupação, antes das "bicas"?',o:['Em um poço artesiano cavado coletivamente','No Jockey Club, nas torneiras onde os cavalos eram lavados','Em caminhões-pipa do governo municipal','No Rio Vacacaí, a quilômetros de distância'],c:1,r:'Nos primeiros meses, os moradores percorriam grandes distâncias até o Jockey Club, onde buscavam água diretamente das torneiras usadas para lavar os cavalos. Para afazeres domésticos, usavam as sangas (pequenos córregos) da região.'},
+  {i:'🪣',q:'Quando a Corsan instalou as primeiras "bicas" coletivas na Nova Santa Marta?',o:['Em março de 1991, antes da ocupação','Entre o final de 1992 e início de 1993','Somente em 1998, após muita pressão','Em 2001, com o cadastramento oficial'],c:1,r:'Entre o final de 1992 e o início de 1993, a Corsan instalou as famosas "bicas" — torneiras coletivas de uso compartilhado. As filas para encher baldes tornaram-se pontos de conversa, união e estratégia entre as famílias. A partir de 1993, começou-se a abrir valetas para levar água às casas.'},
+  {i:'🏠',q:'Como viviam as famílias inteiras debaixo das barracas de lona sem infraestrutura?',o:['Tinham geradores de energia e cisternas individuais','Dormiam no chão em camas improvisadas, sem banheiro, sem luz, dividindo tudo com a família inteira sob plástico','Em trailers confortáveis doados por ONGs','Em containers metálicos fornecidos pelo governo'],c:1,r:'As famílias dormiam no chão sobre papelão ou colchões improvisados, sem energia elétrica, sem banheiro, sem cozinha. A lona preta era a única proteção contra o frio e a chuva. A vida se organizava coletivamente, com fogueiras para cozinhar e cuidado mútuo.'},
+  {i:'🌧️',q:'O que acontecia quando chovia nas barracas de lona?',o:['A água escorria para fora, protegendo os moradores','O chão virava lama, os pertences molhavam, e as lonas frequentemente rasgavam ou cediam','As famílias iam para abrigos municipais temporários','As barracas tinham sistema de drenagem improvisado'],c:1,r:'Nas chuvas, o chão de terra virava lama profunda, os pertences ficavam encharcados e as lonas frequentemente não resistiam. Moradores relatam que passavam noites inteiras tentando proteger filhos e pertences da água que entrava. Era uma das maiores provações da vida nas lonas.'},
+  {i:'✊',q:'Qual foi a frase histórica dita por Fernando Menezes ao cruzar o arame da fazenda?',o:['"Aqui ficamos para sempre!"','"Passamos o arame, agora é esperar e lutar"','"Esta terra é nossa por direito!"','"Ninguém nos tirará daqui!"'],c:1,r:'Leonel Pacheco relata que Fernando Menezes, de punho erguido, declarou: "Passamos o arame, agora é esperar e lutar." Esta frase tornou-se o símbolo de resistência e determinação da ocupação da Nova Santa Marta.'},
+  {i:'🎲',q:'Como foram distribuídos os primeiros lotes entre as famílias ocupantes?',o:['Os líderes escolheram os melhores lotes para si','Por sorteio público e democrático, sem privilégios para ninguém','Por ordem de chegada, quem chegou primeiro escolheu','O governo municipal distribuiu de acordo com renda'],c:1,r:'Os terrenos foram sorteados publicamente. Papeizinhos com número de quadra e lote eram colocados numa caixinha e cada família sorteava o seu. Fernando Menezes destaca que nenhum líder foi privilegiado — "era uma emoção atrás da outra".'},
+  {i:'🏘️',q:'Qual foi a primeira vila a ser constituída na ocupação?',o:['Vila Marista','Vila 10 de Outubro','Vila 7 de Dezembro','Vila Alto da Boa Vista'],c:2,r:'A primeira vila recebeu o nome de Vila 7 de Dezembro, em homenagem à data da ocupação. Está situada no local onde foram erguidas as primeiras barracas na madrugada histórica, e existe até hoje como a mais antiga das vilas da Nova Santa Marta.'},
+  {i:'🚌',q:'Qual vila teve sua origem nas famílias que vieram de uma ocupação anterior na Fernandes Viera?',o:['Vila Marista','Vila 10 de Outubro','Vila Alto da Boa Vista','Vila 18 de Abril'],c:1,r:'A Vila 10 de Outubro recebeu seu nome da data da ordem judicial de desocupação da Fernandes Viera — 10 de outubro de 1992. As 97 famílias que lá viviam foram assentadas na Nova Santa Marta, neste local que até hoje leva esta data no nome.'},
+  {i:'💡',q:'Como as primeiras famílias obtinham energia elétrica nos primeiros dias?',o:['O governo instalou geradores comunitários','Dona Terezinha Menezes, da Vila Prado, emprestou energia de sua casa','Usavam lampiões a querosene comprados coletivamente','Não havia nenhuma forma de energia disponível'],c:1,r:'Dona Terezinha Menezes, moradora da Vila Prado — vizinha à Fazenda Santa Marta — cedeu energia elétrica de sua própria casa para os primeiros ocupantes. Um gesto de solidariedade que permitiu que as famílias sobrevivessem nas primeiras noites.'},
+  {i:'📻',q:'Que tipo de suporte religioso e espiritual as famílias receberam logo após a ocupação?',o:['Apenas a Igreja Católica apoiou a ocupação','Nenhuma religião apoiou, com medo de represálias','Uma celebração ecuménica com Católicos, Luteranos, Anglicanos e Metodistas unidos','O governo proibiu qualquer manifestação religiosa na área'],c:2,r:'Ainda na primeira semana, numa terça-feira de pôr do sol, aconteceu a primeira celebração ecuménica. Participaram Padre Carlos Menegáis, Irmã Terezinha Ófima, Pastor Marcos Birte (Luterano), Reverendo João Fortes (Anglicano) e Pastor Cláudio Morais (Metodista).'},
+  {i:'🌊',q:'O que os moradores usavam para os afazeres domésticos antes da chegada da água encanada?',o:['Água de chuva coletada em baldes','As sangas (córregos) locais, enquanto a água do Jockey era para beber','Poços artesianos escavados coletivamente','Caminhões-pipa do governo estadual'],c:1,r:'Nos primeiros tempos, para os afazeres domésticos como lavar roupas, os moradores recorriam às sangas — pequenos córregos da região. Para beber, iam até o Jockey Club buscar água nas torneiras dos cavalos.'},
+  {i:'📏',q:'Quantos hectares da Fazenda Santa Marta estavam completamente sem uso antes da ocupação?',o:['50 hectares','150 hectares','304 hectares','700 hectares'],c:2,r:'Dos 1.126 hectares totais da Fazenda Santa Marta, exatamente 304 hectares estavam completamente abandonados e sem uso algum. Foi esta área que o MNLM identificou como possível para a ocupação, com o argumento de que terras públicas ociosas deveriam servir à função social da moradia.'},
+  {i:'🏛️',q:'Qual movimento organizou e coordenou a ocupação da Fazenda Santa Marta?',o:['MST — Movimento dos Sem Terra','MNLM — Movimento Nacional de Luta pela Moradia','CUT — Central Única dos Trabalhadores','Partido dos Trabalhadores de Santa Maria'],c:1,r:'O MNLM — Movimento Nacional de Luta pela Moradia — coordenou a ocupação. Diferente de invasões espontâneas, a Nova Santa Marta foi planejada por meses. Fernando Menezes era o coordenador municipal e membro da direção estadual do movimento.'},
+  {i:'⚖️',q:'Qual advogada defendeu juridicamente os ocupantes contra as tentativas de despejo?',o:['Dra. Maria da Graça Silveira','Dra. Sandra Feltrin, do escritório Wagner Associados','Dra. Ana Lima da Prefeitura Municipal','Nenhum advogado aceitou defender os ocupantes'],c:1,r:'A advogada Sandra Feltrin, do escritório Wagner Associados, foi a primeira linha de defesa jurídica dos ocupantes. Quando a Brigada Militar tentou desocupar a área, Sandra estava na linha de frente dos tribunais. Falecida prematuramente, é honrada na Praça Sandra Feltrin.'},
+  {i:'🌱',q:'Como as famílias se alimentavam nos primeiros meses sem mercados, fogões ou geladeiras?',o:['Recebiam cestas básicas diárias do governo','Cozinhavam em fogueiras coletivas, com doações de alimentos de igrejas e sindicatos','Havia um restaurante comunitário desde o primeiro dia','Não comiam — dependiam totalmente de ajuda externa'],c:1,r:'As famílias cozinhavam em fogueiras coletivas a céu aberto ou nas entradas das barracas. Igrejas, sindicatos e solidários da cidade doavam alimentos. Francisco Portella ficou famoso por organizar um "sopão" que alimentou centenas de pessoas nos primeiros meses.'},
+  {i:'🗳️',q:'Quem foi o primeiro representante institucional a visitar a ocupação no dia seguinte à noite histórica?',o:['O prefeito de Santa Maria','O governador do Rio Grande do Sul','O vereador e jornalista Vicente Paulo Bisonho','O delegado regional da Brigada Militar'],c:2,r:'No domingo, dia seguinte à ocupação, o vereador Vicente Paulo Bisonho — jornalista e ouvidor do governo Collor para a região — visitou a ocupação. Ele analisou a situação e sinalizou 200 lotes como possibilidade, ponderando sobre a necessidade de infraestrutura mínima.'},
+  {i:'📰',q:'Qual jornal de Santa Maria foi um dos primeiros a registrar fotograficamente as primeiras barracas?',o:['Diário de Santa Maria','Jornal A Razão','Zero Hora','Correio do Povo'],c:1,r:'O Jornal A Razão de Santa Maria foi um dos primeiros a fotografar as barracas de lona preta e registrar o nascimento da ocupação. Estas fotografias históricas são hoje patrimônio documental inestimável da memória da Nova Santa Marta.'},
+  {i:'🌅',q:'O que significa o nome "Nova Santa Marta"?',o:['Homenagem a uma santa católica da região','Referência à Fazenda Santa Marta que foi ocupada, com o "Nova" indicando o novo bairro que nascia','Nome escolhido em homenagem ao papa João Paulo II','Sigla de um projeto habitacional do governo estadual'],c:1,r:'O nome "Nova Santa Marta" veio da própria Fazenda Santa Marta que foi ocupada. O termo "Nova" representa o recomeço, o nascimento de uma nova realidade sobre aquela terra antes abandonada. Um novo bairro, uma nova comunidade, uma nova vida.'},
+  {i:'👩',q:'Quem foi Guilherminda Barcellos e qual seu papel na história da ocupação?',o:['Primeira diretora da Escola Marista','A moradora cuja situação de vulnerabilidade inspirou Fernando Menezes a organizar a ocupação','Advogada que redigiu o pedido de desapropriação','Vereadora que votou a favor da regularização'],c:1,r:'Dona Guilherminda Barcellos era uma moradora em situação vulnerável da Vila Cai-Cai Mirim. Fernando Menezes foi visitá-la após uma forte chuva que danificou sua casa. Ali, na conversa, brotou na sua cabeça a ideia de organizar uma ocupação para as famílias sem moradia.'},
+  {i:'📡',q:'Como foi divulgada e coordenada a mobilização das famílias antes da ocupação, sem internet ou celular?',o:['Por anúncios em rádio e televisão locais','Pessoalmente, boca a boca, em reuniões em casas, sindicatos e igrejas','Por panfletos distribuídos nas ruas do Centro','Por carta enviada pelo correio a cada família'],c:1,r:'Sem internet, sem celulares, sem redes sociais, a mobilização foi feita inteiramente de forma presencial: reuniões em casas de famílias, sindicatos, igrejas. Um trabalho de base realizado boca a boca ao longo de quase dois anos, entre 1990 e 1991.'},
+  {i:'🎯',q:'Qual era o argumento principal do MNLM para justificar a ocupação das terras da fazenda?',o:['As famílias tinham direito hereditário às terras','Terras públicas ociosas devem cumprir função social — e a lei de 1984 que determinava moradias nunca foi cumprida','O governo estadual havia prometido as terras em troca de votos','A fazenda estava em processo de falência e seria leiloada'],c:1,r:'O argumento central era a Lei Estadual 7.933/1984, que determinava a doação de 340 ha para moradias populares em 5 anos. Após 7 anos sem cumprimento, o MNLM argumentou que terras públicas ociosas violavam a função social da propriedade garantida pela Constituição de 1988.'},
+  {i:'🕯️',q:'Qual a sequência de crescimento das vilas da Nova Santa Marta após a Vila 7 de Dezembro?',o:['7 de Dezembro → Alto da Boa Vista → Marista → 10 de Outubro → 18 de Abril → Núcleo Central → Pôr do Sol','10 de Outubro → 7 de Dezembro → Marista → Pôr do Sol','18 de Abril → 7 de Dezembro → Alto da Boa Vista → Marista','Marista → 7 de Dezembro → Pôr do Sol → Núcleo Central'],c:0,r:'A sequência histórica de formação das vilas foi: Vila 7 de Dezembro (pioneira, dez/1991), Vila Alto da Boa Vista, Loteamento Marista, Vila 10 de Outubro (famílias da Fernandes Viera, out/1992), Loteamento 18 de Abril, Núcleo Central e Vila Pôr do Sol — cada uma com identidade própria.'},
+  {i:'🏗️',q:'Em que ano a Corsan começou a abrir valetas para levar água encanada ao interior das casas?',o:['Em 1991, logo após a ocupação','A partir de 1993','Somente em 2001, com o cadastramento','Em 1997, com a chegada da Escola Marista'],c:1,r:'A partir de 1993, a Corsan começou a abrir as valetas para finalmente levar água encanada ao interior das casas da Nova Santa Marta. Antes disso, as famílias dependiam das "bicas" coletivas (instaladas entre final de 1992 e início de 1993) e das longas caminhadas até o Jockey Club.'}
+],
+2:[
+  {i:'⛪',q:'O que era o Centro Ecuménico da Nova Santa Marta e por que era chamado de "pulmão" da comunidade?',o:['Era uma igreja católica que centralizava as atividades','Era um espaço que reunia diferentes religiões e por onde passavam todas as demandas e pautas da comunidade','Era um hospital alternativo criado pelos moradores','Era o centro comercial do bairro nos primeiros anos'],c:1,r:'O Centro Ecuménico foi criado pela necessidade de ter um espaço para celebrações e reuniões de reivindicação. Todas as pautas da comunidade — água, luz, ruas, escolas — passaram por ele. Por isso Pedro Zoé o chamava de "pulmão que deu vida à comunidade".'},
+  {i:'🏫',q:'De onde veio o salão que se tornou o primeiro Centro Ecuménico da Nova Santa Marta?',o:['Foi construído pelos próprios moradores com tijolos doados','Era um antigo salão do Colégio Centenário (escola metodista) trazido pela liderança do Pastor Cláudio Morais','Foi doado pelo governo municipal','Era um galpão da antiga fazenda adaptado pelas famílias'],c:1,r:'O Pastor Cláudio Morais tinha boa relação com a direção do Colégio Centenário — uma escola metodista. Conseguiu um velho salão de madeira do colégio e o trouxe para a Nova Santa Marta, instalando-o onde hoje é o Colégio Marista e a Creche Sinos de Belém.'},
+  {i:'🙏',q:'Como uma oração decidiu o local definitivo do Centro Ecuménico?',o:['O local foi decidido por votação democrática entre os moradores','Após desentendimento sobre o local, o Pastor Cláudio propôs fazer uma oração e aceitar o que o Espírito Santo revelasse — e o local indicado pela Corsan foi o escolhido','O prefeito determinou o local por decreto','O arquiteto Vilmar Galvão escolheu o melhor terreno'],c:1,r:'Havia polêmica entre colocar o Centro na Rua 9 (próxima à Vila 7 de Dezembro) ou no local indicado pelo gerente da Corsan. O Pastor Cláudio propôs: "Vamos orar e aceitar o revelado." Após a oração, o local da Corsan foi aceito. Menos de um ano depois, Pedro Zoé admitia que era o melhor lugar.'},
+  {i:'👶',q:'O que inspirou a construção da Creche Sinos de Belém?',o:['Uma determinação do governo municipal','Na celebração ecuménica de Natal de 1993, crianças entraram gritando "queremos creche!" — emocionando o Pastor Cláudio e a Irmã Terezinha','Uma doação espontânea de uma empresa privada','Um decreto federal de implantação de creches em assentamentos'],c:1,r:'Na celebração ecuménica de Natal de 1993, após um jogral organizado pela Marly da Silva com crianças do Projeto Renacer (UFSM), as crianças entraram gritando "queremos creche!". O Pastor Cláudio disse: "Não podemos decepcioná-las. Não sei como, mas vamos fazer essa creche."'},
+  {i:'🇮🇹',q:'Qual foi o recurso que viabilizou a construção da Creche Sinos de Belém?',o:['Uma verba do orçamento municipal','R$7.000 deixados por um padre italiano falecido, que queria ajudar alguém na América Latina pela Paróquia São João Evangelista','Uma campanha de arrecadação nacional','Um financiamento do Banco Mundial para assentamentos'],c:1,r:'Um padre italiano amigo da Paróquia São João Evangelista faleceu deixando R$7.000 com o desejo de ajudar alguém na América Latina. A Irmã Terezinha Ófima comunicou o recurso a Pedro Zoé: "Veio um recurso de um amigo nosso que faleceu — vamos fazer essa creche." Uma solidariedade que cruzou oceanos.'},
+  {i:'🥖',q:'O que foi a Jésima e como ela contribuiu para a Creche Sinos de Belém?',o:['Era uma loja de materiais de construção que doou tijolos','Era uma padaria ecuménica de geração de renda — seu prédio, quando ficou vago, foi reformado pelas Irmãs Franciscanas e incorporado à Creche para ampliar as vagas','Era o nome da primeira diretora da creche','Era uma ONG italiana que financiou a construção'],c:1,r:'A Jésima era um projeto ecuménico de geração de trabalho e renda — uma padaria comunitária. Quando o espaço ficou ocioso, as Irmãs Franciscanas da UFN reformaram o prédio e o cederam para ampliar a Creche Sinos de Belém, resolvendo o problema de superlotação de vagas.'},
+  {i:'📚',q:'Em que ano a Escola Marista Santa Marta iniciou suas atividades e quais séries atendia?',o:['Em 1992, atendendo todas as séries do Ensino Fundamental','Em 1996, atendendo crianças de pré-escola à 4ª série','Em 2001, inaugurada pelo governador Olívio Dutra','Em 1993, junto com a Creche Sinos de Belém'],c:1,r:'A Escola Marista Santa Marta iniciou suas atividades em 1996, atendendo crianças de pré-escola à 4ª série. Foi o primeiro ponto fixo de educação formal do bairro. A construção do prédio começou em 1997, conforme registrado em documentário histórico sobre a escola.'},
+  {i:'🏛️',q:'Em que ano Fernando Menezes foi eleito vereador de Santa Maria e o que isso representou?',o:['Em 1994, logo após liderar a ocupação','Em 1997, levando a voz da Nova Santa Marta para dentro da Câmara Municipal','Em 2004, após se tornar secretário municipal','Em 2000, como reconhecimento por seu trabalho com o MNLM'],c:1,r:'Fernando Menezes foi eleito vereador de Santa Maria em 1997 e exerceu mandato até 2000. Depois foi secretário municipal (2001-2004). Pela primeira vez, a luta da Nova Santa Marta tinha representação dentro das estruturas de poder do município.'},
+  {i:'🎓',q:'Qual foi o papel do Convênio UFSM-Estado-Município de 1999 para o bairro?',o:['Financiou a construção de casas novas para todos os moradores','Produziu o primeiro cadastro socioeconômico oficial das famílias e projetos técnicos de urbanização — o primeiro passo para a regularização fundiária','Trouxe professores universitários para morar no bairro','Criou um centro universitário dentro da Nova Santa Marta'],c:1,r:'O convênio entre UFSM, governo Olívio Dutra e a prefeitura gerou o primeiro cadastro socioeconômico oficial da Nova Santa Marta. Projetos técnicos de reorganização espacial foram elaborados, sendo o primeiro passo concreto em direção à regularização fundiária que viria décadas depois.'},
+  {i:'🏫',q:'Qual escola estadual foi inaugurada em julho de 2001 na Nova Santa Marta?',o:['Escola Estadual Nova Santa Marta','Escola Estadual Assentamento Santa Marta (depois renomeada Escola Estadual Santa Marta)','Escola Estadual Fernando Menezes','Escola Estadual 7 de Dezembro'],c:1,r:'Em julho de 2001, no governo Olívio Dutra (PT), foi inaugurada a Escola Estadual Assentamento Santa Marta, localizada na Vila Núcleo Central. Ela veio atender as séries mais avançadas que a Escola Marista ainda não cobria, expandindo o acesso à educação no bairro.'},
+  {i:'💡',q:'Quando as famílias das Vilas Marista I e II começaram a receber água e luz oficiais?',o:['Em 1993, logo após as bicas coletivas','Em 2001, com o cadastramento socioeconômico','Em 2005, após o PAC','Em 1997, junto com a Escola Marista'],c:1,r:'Em 2001, com o cadastramento das famílias das Vilas Marista I e II, água e luz oficiais começaram a chegar progressivamente. A dignidade de ter uma conta de luz e água no próprio nome foi uma conquista simbólica enorme para famílias que viviam com ligações improvisadas.'},
+  {i:'🏫',q:'Em que ano foi inaugurada a Escola Municipal Adelmo Simas Genro?',o:['Em 1999','Em 2001','Em 2003','Em 2007'],c:2,r:'A Escola Municipal Adelmo Simas Genro foi inaugurada em 2003, no governo do prefeito Valdeci Oliveira (PT). Tornou-se uma das maiores escolas municipais de Santa Maria, com capacidade para 700 alunos, completando a rede educacional do bairro.'},
+  {i:'🛣️',q:'Qual foi a primeira rua asfaltada da Nova Santa Marta e o que isso representou?',o:['Rua 7 de Dezembro, em 1995','Rua Mallman Filho, em 2003, representando o fim da lama e o início do respeito urbano','Avenida Principal em 2001','Rua do Ecumenismo em 2005'],c:1,r:'A Rua Mallman Filho foi a primeira rua asfaltada da Nova Santa Marta, por volta de 2003. Para os moradores que pisavam na lama nos dias de chuva e sofriam preconceito nos ônibus, o asfalto representou muito mais do que conforto — foi o início do reconhecimento e do respeito urbano.'},
+  {i:'🗺️',q:'Em que ano a Nova Santa Marta passou a figurar oficialmente no mapa da cidade de Santa Maria?',o:['Em 1995, quatro anos após a ocupação','Em 2001','Em 2007, dezesseis anos após a ocupação','Em 2010, com a chegada do PAC'],c:2,r:'Em 2007, dezesseis anos após a ocupação, o bairro Nova Santa Marta passou a figurar oficialmente no mapa da cidade de Santa Maria. O bairro que "não existia" — sem endereço reconhecido — ganhou existência jurídica, cartográfica e simbólica.'},
+  {i:'🕊️',q:'Qual era o princípio fundamental do ecumenismo na Nova Santa Marta?',o:['Que todos deveriam se converter ao catolicismo','Que ser diferente não é ser contrário — mantendo identidade religiosa própria mas trabalhando pautas comuns para a promoção da vida','Que as religiões deveriam fundir-se em uma só','Que apenas líderes religiosos participavam das decisões comunitárias'],c:1,r:'O grande fundamento do ecumenismo era: ser diferente não é ser contrário. Católicos, Luteranos, Anglicanos e Metodistas mantinham suas identidades religiosas, mas trabalhavam juntos nas pautas comuns da comunidade: água, luz, ruas, escola, saúde — a promoção da vida cotidiana.'},
+  {i:'👩',q:'Quem foi Marly da Silva e qual foi sua contribuição para a comunidade?',o:['Primeira diretora da Escola Estadual Santa Marta','Liderança feminina do MNLM que articulou o Projeto Renacer com a UFSM e cuja mobilização gerou a Creche Sinos de Belém','Advogada que substituiu Sandra Feltrin na defesa jurídica','Secretária municipal responsável pela regularização fundiária'],c:1,r:'Marly da Silva era uma liderança feminina do MNLM com uma vida de muito sofrimento pessoal. Com carinho especial pelas crianças vulneráveis, articulou com a UFSM o Projeto Renacer (arte, reforço escolar, jogral). Sua mobilização foi o gatilho para a criação da Creche Sinos de Belém.'},
+  {i:'🚌',q:'Em 30 de abril de 2007, 300 moradores foram a Porto Alegre. Por quê?',o:['Para protestar contra o fechamento de uma escola','Para exigir a transferência de 254 hectares da fazenda para o município — sem isso, R$42 mi do PAC iriam para outra cidade','Para pedir a regularização dos títulos de propriedade','Para participar de uma audiência sobre transporte público'],c:1,r:'Em 30 de abril de 2007, 300 moradores partiram de Santa Maria para Porto Alegre para pressionar o governo estadual a transferir 254 hectares da Fazenda Santa Marta para o município. Sem esta municipalização, os R$42 milhões do PAC previstos para o bairro iriam para outra localidade.'},
+  {i:'🏠',q:'Em que consistia o trabalho de mutirão que transformou as barracas de lona em casas de madeira?',o:['Empresas de construção doavam seus funcionários aos finais de semana','Vizinhos ajudavam vizinhos voluntariamente a levantar paredes, cobrir telhados e instalar janelas, sem remuneração','O governo enviava batalhões de engenheiros militares','ONGs internacionais financiavam e supervisionavam as obras'],c:1,r:'A cultura do mutirão foi central na transformação da Cidade de Lona em Cidade de Madeira. Vizinhos ajudavam vizinhos espontaneamente, fins de semana inteiros levantando paredes, assentando telhados, instalando janelas. Uma forma de solidariedade que não tinha preço e que acelerou o crescimento do bairro.'},
+  {i:'🍞',q:'O que foi o Sopão do Francisco Portella e por que é lembrado até hoje?',o:['Um restaurante popular que existiu nos anos 2000','Uma das primeiras iniciativas de caridade prática — transformava doações em refeições quentes para centenas de famílias nos momentos mais difíceis','Um projeto de padaria comunitária do CEBI','Um programa do governo municipal de distribuição de alimentos'],c:1,r:'O Sopão do Francisco Portella foi uma das iniciativas de solidariedade mais marcantes dos primeiros anos. Francisco organizava doações de alimentos e as transformava em refeições quentes para centenas de famílias que não tinham o que comer. É lembrado até hoje como símbolo de caridade prática da comunidade.'},
+  {i:'🤝',q:'O que o gerente da Corsan sugeriu que mudou os planos do Centro Ecuménico?',o:['Que o Centro fosse construído em outro bairro da cidade','Que o local inicial (Rua 9) não era ideal, e indicou o local onde hoje é o Colégio Marista e a Creche Sinos de Belém, por ser mais centralizado e estratégico','Que a Corsan financiaria integralmente a construção do Centro','Que o projeto deveria aguardar a regularização fundiária'],c:1,r:'O gerente da Corsan de Santa Maria, ao receber Pedro Zoé, o Pastor Cláudio e o Padre Neu para tratar da água, discordou do local inicial do Centro Ecuménico. Apontou um local mais alto e centralizado — exatamente onde hoje ficam o Colégio Marista e a Creche Sinos de Belém — como muito mais estratégico.'},
+  {i:'🌸',q:'Quando foi aberta a EMEI Gianna Grassi Didonet na Nova Santa Marta e o que representa?',o:['Em 2003, junto com a Escola Adelmo Simas Genro','Em 2010, no governo Valdeci Oliveira','Em 2024, ampliando o atendimento à primeira infância no bairro','Em 1999, como a primeira creche do bairro'],c:2,r:'A Escola Municipal de Educação Infantil Gianna Grassi Didonet foi aberta em 2024, ampliando significativamente o atendimento à primeira infância na Nova Santa Marta. Mais uma conquista educacional do bairro que, em 1991, não tinha nenhuma escola.'},
+  {i:'📖',q:'O que era o CEBI e qual seu papel na comunidade?',o:['Centro de Estudos de Biologia Infantil, que tratava crianças doentes','Centro de Estudos Bíblicos Ecuménicos — motor intelectual e espiritual das primeiras conquistas, onde se decidiu construir a Creche e se transformou fé em ação concreta','Centro de Ensino Básico Integrado — uma escola noturna para adultos','Central de Empregos e Benefícios Independentes'],c:1,r:'O CEBI — Centro de Estudos Bíblicos Ecuménicos — era o espaço intelectual e espiritual de reflexão da comunidade. Foi no CEBI que se tomou a decisão de construir a Creche Sinos de Belém, que se discutiram as pautas comunitárias e que a fé ecuménica se transformou em ação social concreta.'},
+  {i:'👨‍🎨',q:'Quem foi Vilmar Galvão e qual foi seu papel nos primeiros anos da Nova Santa Marta?',o:['O primeiro diretor da Escola Marista','Um desenhista apoiador do movimento que criou o projeto arquitetônico do Centro Ecuménico na Rua 9, antes do local ser mudado','O arquiteto que projetou as casas de madeira do bairro','O engenheiro da Corsan que instalou as primeiras bicas'],c:1,r:'Vilmar Galvão era um desenhista e apoiador do movimento habitacional. Com seu talento, criou um projeto arquitetônico muito bonito para o Centro Ecuménico que seria construído na Rua 9, entre as Vilas 10 de Outubro e 7 de Dezembro. O local acabou sendo mudado, mas o gesto de Vilmar ficou na memória.'},
+  {i:'🏘️',q:'Quais são as sete vilas que compõem o bairro Nova Santa Marta?',o:['7 de Dezembro, Marista, Esperança, Nova, Pôr do Sol, Central e Jardim','7 de Dezembro, Alto da Boa Vista, 10 de Outubro, 18 de Abril, Loteamento Marista, Núcleo Central e Pôr do Sol','Caramelo, Prado, Marista, Central, São João, Jardim e Sul','7 de Dezembro, Madeira, Lona, Concreto, Marista, Central e Oeste'],c:1,r:'O bairro Nova Santa Marta é composto por sete vilas: Vila 7 de Dezembro (pioneira), Loteamento Alto da Boa Vista, Vila 10 de Outubro, Loteamento 18 de Abril, Loteamento Marista, Núcleo Central e Vila Pôr do Sol. Cada uma com identidade, história e lideranças próprias.'},
+  {i:'🌿',q:'O que aconteceu com o prédio da antiga Jésima (padaria ecuménica) quando ficou ocioso?',o:['Foi demolido para construção de uma praça','As Irmãs Franciscanas da UFN o reformaram e incorporaram à Creche Sinos de Belém, aumentando as vagas','Foi transformado na sede da associação de moradores','Foi vendido para financiar obras de saneamento'],c:1,r:'Quando a padaria Jésima encerrou suas atividades, o prédio ficou vazio. As Irmãs Franciscanas da Universidade Franciscana (UFN) identificaram a necessidade de mais vagas na creche, reformaram o espaço e o incorporaram à Creche Sinos de Belém. Uma generosidade que resolveu o problema de superlotação.'},
+  {i:'🚿',q:'O que representou para as famílias o início do cadastramento oficial para água e luz?',o:['Apenas uma burocracia sem impacto real no dia a dia','Uma conquista enorme de dignidade: ter uma conta de água e luz no próprio nome, ser reconhecido como morador legítimo pelo sistema','Uma ameaça, pois poderia levar ao despejo das famílias','Uma obrigação imposta pelo governo como condição para regularização'],c:1,r:'O cadastramento foi uma conquista enorme de dignidade. Após anos com ligações improvisadas e "gatos", ter uma conta de água e luz no próprio nome significava ser reconhecido como morador legítimo. Era o Estado reconhecendo a existência das famílias e do bairro.'},
+  {i:'🎓',q:'O que o Projeto Renacer da UFSM oferecia às crianças da Nova Santa Marta?',o:['Bolsas de estudo para universidades federais','Arte, reforço escolar e jogral — expressão cultural e apoio educacional para crianças em vulnerabilidade','Uniforme, material escolar e transporte para escolas do Centro','Atendimento médico e psicológico para crianças traumatizadas'],c:1,r:'O Projeto Renacer, articulado por Marly da Silva junto à UFSM, oferecia às crianças atividades de arte, reforço escolar e prática de jogral. Era uma forma de expressão cultural, desenvolvimento educacional e fortalecimento da identidade das crianças da Nova Santa Marta em situação de vulnerabilidade.'},
+  {i:'🏗️',q:'Quantas famílias compunham o grupo que veio da ocupação da Fernandes Viera para a Nova Santa Marta em outubro de 1992?',o:['20 famílias','50 famílias','97 famílias','200 famílias'],c:2,r:'97 famílias da ocupação da Fernandes Viera foram transferidas para a Nova Santa Marta em 10 de outubro de 1992, data da ordem judicial de desocupação. Elas foram assentadas no local que se tornou a Vila 10 de Outubro — o nome sendo uma homenagem direta à data da sua chegada.'},
+  {i:'🌟',q:'O que tornou a Nova Santa Marta uma referência em estudos urbanos e movimentos sociais?',o:['O tamanho incomum dos apartamentos construídos','Ser uma das maiores e mais bem-sucedidas ocupações urbanas organizadas da América Latina — planejada, democrática e que construiu um bairro completo','Ter a maior densidade populacional do Brasil','Ser o único assentamento com aprovação unânime do governo federal'],c:1,r:'A Nova Santa Marta é frequentemente citada em estudos de urbanismo, direito à cidade e movimentos sociais como um dos maiores e mais bem-sucedidos exemplos de ocupação urbana organizada da América Latina. O planejamento, a democracia interna, o crescimento estruturado e a conquista de serviços são fatores que a distinguem.'},
+  {i:'🏡',q:'O que torna as casas da Nova Santa Marta únicas em comparação com conjuntos habitacionais tradicionais?',o:['São maiores e mais modernas que as casas da Cohab','Cada casa tem a marca de quem a construiu — paredes coloridas, formatos diferentes, ampliações ao longo do tempo — a identidade de cada família impressa em alvenaria','São todas idênticas, seguindo o padrão arquitetônico aprovado pela prefeitura','Foram construídas por empresas de construção internacional'],c:1,r:'Diferente dos conjuntos habitacionais tradicionais (onde todas as casas são iguais), na Nova Santa Marta cada casa é única. Feita pelas próprias mãos dos moradores ao longo do tempo, com a personalidade de cada família — ampliações, cores, formatos. Fernando Menezes destacou: "Nem uma casa é igual a outra."'},
+  {i:'🚗',q:'Qual foi o episódio do "rancho anônimo" que se tornou símbolo de solidariedade da comunidade?',o:['O governo enviou alimentos anônimos para todas as creches da cidade','A diretora da creche, sem alimento para as crianças, encontrou uma caminhonete na porta: um homem deixou um rancho completo pedindo apenas que não perguntassem seu nome','Um supermercado doou mercadorias anonimamente todo mês por 10 anos','Moradores de outro bairro entregaram alimentos à noite sem se identificar'],c:1,r:'Quando a diretora da Creche Sinos de Belém não tinha alimento para as crianças, ao sair para comprar encontrou uma caminhonete parada. Um homem descarregou um rancho completo — suficiente para o mês — e pediu apenas uma coisa: "Não me pergunte quem eu sou." A história tornou-se símbolo da solidariedade invisível que sustentou a comunidade.'},
+  {i:'🌙',q:'Segundo relatos do documentário, como muitas casas de madeira eram erguidas na Nova Santa Marta?',o:['Apenas por empreiteiras contratadas pela prefeitura','Durante a noite, com famílias e vizinhos pregando tábuas e levantando estruturas rapidamente','Com casas prontas trazidas de caminhão pelo governo estadual','Somente depois da chegada do PAC'],c:1,r:'O vídeo relata que moradores passavam noites pregando pregos, recebendo caminhões com madeira nova e usada. À noite não havia casa; no dia seguinte, já havia estrutura levantada. A Cidade de Madeira nasceu de esforço familiar, mutirão e urgência de morar com dignidade.'},
+  {i:'🪵',q:'O que as primeiras casas de madeira representaram para quem saiu das barracas de lona?',o:['Apenas uma troca de material sem mudança real','Segurança, dignidade e a sensação de que aquele espaço era realmente seu','Uma etapa sem valor, pois só a alvenaria importava','Uma imposição do governo para retirar as famílias'],c:1,r:'Mesmo simples, feitas com tábuas de pinus e telhas finas de brasilit, as casas de madeira davam proteção e pertencimento. O relato do vídeo destaca que a madeira substituiu a lona e trouxe a sensação concreta de casa própria.'},
+  {i:'📐',q:'Como algumas vilas foram organizadas durante a consolidação da Cidade de Madeira?',o:['Sem ruas, sem medidas e sem áreas comuns','Com preocupação por ruas, áreas verdes, escolas e divisão dos lotes','Somente por ordem de chegada, sem liderança comunitária','A partir de projetos prontos de construtoras privadas'],c:1,r:'O vídeo reforça que lideranças pensavam onde ficariam ruas, áreas verdes, escolas e quadras. Em algumas vilas, moradores mediam lotes e organizavam o espaço, mostrando que a ocupação tinha planejamento comunitário, não era desordem.'},
+  {i:'🚌',q:'Que iniciativa comunitária ajudou a melhorar a espera pelo transporte coletivo?',o:['A construção de paradas de ônibus em mutirão pelos próprios moradores','A compra de ônibus particulares por cada família','A proibição de ônibus passarem pelo bairro','A retirada das linhas antigas sem substituição'],c:0,r:'Moradores e lideranças relatam que voluntários construíram paradas de ônibus aos domingos, com caixinhas de concreto e pilares. A luta por transporte também envolveu reuniões longas com empresários e governos, muitas delas na Escola Marista.'}
+],
+3:[
+  {i:'💰',q:'Quanto o PAC (Programa de Aceleração do Crescimento) investiu na Nova Santa Marta?',o:['R$5 milhões','R$20 milhões','R$42 milhões','R$100 milhões'],c:2,r:'O PAC investiu R$42 milhões na Nova Santa Marta — a maior obra de infraestrutura da história do bairro. Em 23 de junho de 2008 foi inaugurado o escritório do PAC no CMID (Centro Marista de Inclusão Digital), e as obras transformaram completamente a estrutura urbana do bairro.'},
+  {i:'🏛️',q:'Quem veio pessoalmente à Nova Santa Marta dar início às obras do PAC?',o:['O presidente Lula, em visita oficial ao Rio Grande do Sul','Dilma Rousseff, então ministra-chefe da Casa Civil do governo Lula','O governador do RS, Yeda Crusius','O prefeito de Santa Maria, César Schirmer'],c:1,r:'Dilma Rousseff, então ministra-chefe da Casa Civil do governo Lula, veio pessoalmente à Nova Santa Marta dar início às obras do PAC. Segundo Suelen Gonçalves, foi um momento histórico de reconhecimento nacional da luta da comunidade: "a nossa sempre presidenta Dilma".'},
+  {i:'💧',q:'O que as obras do PAC incluíram além do asfalto?',o:['Apenas pavimentação das ruas principais','Rede de esgoto, drenagem pluvial, pavimentação e iluminação pública — transformando radicalmente as condições sanitárias e urbanas do bairro','Construção de novas casas para os moradores','Instalação de fibra ótica em todas as residências'],c:1,r:'As obras do PAC foram abrangentes: rede de esgoto, drenagem pluvial, pavimentação de ruas, iluminação pública. Antes, grande parte do bairro não tinha saneamento básico. As doenças relacionadas à falta de esgoto eram frequentes. O PAC representou a "revolução na infraestrutura" descrita por Suelen Gonçalves.'},
+  {i:'📜',q:'Em que ano as primeiras escrituras de propriedade começaram a ser entregues aos moradores?',o:['Em 2007, junto com as obras do PAC','Em 2015','Em 2019, quase três décadas após a ocupação','Em 2024'],c:2,r:'Em 2019, quase três décadas após a ocupação de dezembro de 1991, as primeiras escrituras começaram a ser entregues. Para os moradores idosos que haviam lutado desde o início, receber o documento em mãos foi um momento de choro — a confirmação de que uma vida de luta havia valido a pena.'},
+  {i:'💻',q:'O que era o CMID e qual era sua importância para a comunidade?',o:['Centro Municipal de Infraestrutura e Drenagem — responsável pelas obras de saneamento','Centro Marista de Inclusão Digital — um dos mais ativos centros de tecnologia social do RS, onde jovens tinham acesso à informática, internet e cidadania digital','Centro Médico Integrado Diocesano — um posto de saúde especializado','Centro de Mediação e Integração de Demandas — um serviço social comunitário'],c:1,r:'O CMID — Centro Marista de Inclusão Digital — tornou-se um dos centros de tecnologia social mais reconhecidos do Rio Grande do Sul. Jovens e adultos tinham acesso gratuito à informática, internet, cursos e projetos inovadores. Foi inclusive dentro do CMID que funcionou o escritório do PAC.'},
+  {i:'🤖',q:'Quais projetos inovadores de Robótica Livre o educador Leandro Schneider junto com demais educadores e estudantes do CMID construíram?',o:['Um robô de limpeza de praças públicas e um drone de monitoramento','CMID Car (veículo controlado por robótica reciclada) e uma Cadeira Motorizada adaptada para pessoas com deficiência','Um sistema de irrigação automática para hortas comunitárias','Robôs para auxiliar idosos nas Unidades de Saúde'],c:1,r:'Leandro Schneider, junto com demais educadores e estudantes do CMID, participou da construção de projetos de Robótica Livre como o CMID Car, feito com lixo eletrônico reciclado, e uma Cadeira Motorizada adaptada. Esses projetos levaram o nome da Nova Santa Marta ao FISL, Latinoware e Campus Party.'},
+  {i:'🌐',q:'A que grandes eventos nacionais e internacionais de tecnologia o CMID foi levado?',o:['Feira de Robótica de São Paulo e Olimpíada Brasileira de Informática','FISL (Fórum Internacional do Software Livre), Latinoware e Campus Party','Congresso Nacional de Educação e Simpósio de Inovação Tecnológica','Expo 2005 do Japão e CES Las Vegas'],c:1,r:'Os projetos do CMID, especialmente os de Robótica Livre com lixo eletrônico, foram apresentados no FISL (Fórum Internacional do Software Livre), no Latinoware e na Campus Party — três dos maiores eventos de tecnologia da América Latina. A periferia de Santa Maria na vanguarda tecnológica internacional.'},
+  {i:'🏥',q:'O que é o CRAS Oeste e qual sua importância para o bairro?',o:['Centro de Reciclagem e Apoio Social Oeste — recicla lixo eletrônico da comunidade','Centro de Referência de Assistência Social — atende famílias em situação de vulnerabilidade social com benefícios, orientação e acompanhamento','Centro de Rastreamento de Automóveis e Serviços — um posto de documentação veicular','Centro de Requalificação e Atualização de Software — apoio tecnológico comunitário'],c:1,r:'O CRAS Oeste — Centro de Referência de Assistência Social — é o equipamento público de assistência social que atende as famílias em vulnerabilidade da Região Oeste, incluindo a Nova Santa Marta. Benefícios sociais, orientação familiar e acompanhamento são seus principais serviços.'},
+  {i:'🌳',q:'Em honra de quem foi nomeada a Praça Sandra Feltrin da Nova Santa Marta?',o:['Uma moradora pioneira que viveu 100 anos na comunidade','A advogada que defendeu juridicamente os ocupantes desde o primeiro dia — falecida prematuramente','A primeira diretora da Creche Sinos de Belém','A esposa do vereador que votou pela regularização fundiária'],c:1,r:'A Praça Sandra Feltrin homenageia a advogada Sandra Feltrin, do escritório Wagner Associados, que defendeu juridicamente os ocupantes desde os primeiros dias. Sua atuação nos tribunais foi fundamental para que as famílias permanecessem. Falecida prematuramente, sua memória é perpetuada neste espaço de lazer.'},
+  {i:'🏦',q:'Em que ano o bairro recebeu um Ponto Bancário próprio, ampliando a inclusão financeira dos moradores?',o:['Em 2008, com as obras do PAC','Em 2012','Em 2024','Em 2019'],c:2,r:'Em 2024, o bairro Nova Santa Marta passou a contar com um Ponto Bancário próprio. A inclusão financeira de cerca de 25 mil moradores dentro do próprio bairro representou uma conquista significativa — antes, era necessário se deslocar até o Centro de Santa Maria para transações bancárias básicas.'},
+  {i:'📊',q:'Qual é a estimativa de população da Nova Santa Marta em 2026?',o:['Cerca de 5.000 pessoas','Cerca de 12.722 pessoas (dado IBGE 2020)','Cerca de 25.000 pessoas, segundo lideranças comunitárias','Mais de 50.000 pessoas'],c:2,r:'Em 2020, o IBGE registrou 12.722 moradores. Porém, as lideranças comunitárias estimam que em 2026 o bairro já abriga cerca de 25.000 pessoas, distribuídas nas sete vilas. De 50 famílias pioneiras em 1991 a 25 mil moradores em 35 anos — um crescimento extraordinário.'},
+  {i:'📻',q:'O que o líder comunitário Eder Pompeu idealizou e qual legado deixou?',o:['A primeira escola do bairro, que hoje leva seu nome','A Rádio Comunitária da Nova Santa Marta — seu legado foi tão marcante que a Unidade Básica de Saúde do Alto da Boa Vista leva seu nome','O projeto de arborização do bairro que plantou centenas de árvores','A cooperativa de materiais de construção que viabilizou casas para moradores'],c:1,r:'Eder Pompeu foi líder comunitário de destaque e idealizador da Rádio Comunitária da Nova Santa Marta. Seu legado na comunicação e na luta por direitos foi tão significativo que a Unidade Básica de Saúde (UBS) do Alto da Boa Vista recebeu seu nome em sua homenagem.'},
+  {i:'🙏',q:'O que é o Projeto Francisco Espinelli e como atua na comunidade?',o:['Um projeto de futebol para jovens do bairro','Um centro espírita de apoio à promoção humana, educação e acolhimento social para famílias em situação de vulnerabilidade','Uma escola de música financiada por uma fundação religiosa','Um programa de doação de cestas básicas ligado à Igreja Católica'],c:1,r:'O Projeto Francisco Espinelli é um centro espírita de apoio focado na dignidade humana através da educação e do amparo social. Atua na rede de solidariedade da Nova Santa Marta, oferecendo suporte e acolhimento para famílias em situação de vulnerabilidade. É um pilar silencioso e constante no cuidado do bairro.'},
+  {i:'🥖',q:'O que é o Projeto Pão da Vida e quando foi inaugurado?',o:['Um projeto de panificação profissional inaugurado em 2010','Inaugurado em 18 de fevereiro de 2026 na Comunidade São Marcelino Champagnat — produz pães para famílias carentes','Um programa de alimentação escolar criado em 2015','Uma padaria social aberta em 2001 pelo Centro Ecuménico'],c:1,r:'O Projeto Pão da Vida foi inaugurado em 18 de fevereiro de 2026 na Comunidade São Marcelino Champagnat. Iniciativa do Padre Rogério e do Bispo Dom Leomar, coordenado pelas Sras. Elenir e Mariza, o projeto produz pães para famílias carentes — no mesmo local onde nasceu o primeiro Centro Ecuménico da Nova Santa Marta.'},
+  {i:'👶',q:'Quando foi implantada a Pastoral da Criança na Nova Santa Marta e o que oferece?',o:['Em 2001, junto com o cadastramento de luz e água','Em 2009, na Comunidade São Marcelino Champagnat — com visitas domiciliares e encontros mensais atendendo 60 famílias','Em 2015, como projeto do Colégio Marista','Em 1995, como um dos primeiros serviços sociais do bairro'],c:1,r:'A Pastoral da Criança foi implantada em 2009 na Comunidade São Marcelino Champagnat. Atende 60 famílias com visitas domiciliares regulares e encontros mensais. É um pilar vital no monitoramento nutricional e no suporte à saúde infantil das crianças da Nova Santa Marta.'},
+  {i:'🎓',q:'Qual é a conquista histórica do Colégio Marista Santa Marta em 2026 e por que é especial?',o:['A construção de um novo prédio moderno para a escola','A inauguração do Ensino Médio — completando o ciclo educacional, um desejo da comunidade por anos, pois o Marista acompanhou gerações desde a infância','A criação de um curso técnico profissionalizante noturno','O recebimento de um prêmio nacional de educação'],c:1,r:'Em 2026, o Colégio Marista Santa Marta inaugura o Ensino Médio, completando o ciclo educacional que a comunidade esperava com amor e esperança. Outras escolas do bairro já tinham Ensino Médio, mas era um desejo especial ver o Marista — que acompanhou gerações desde a infância — oferecer também a formação completa aos jovens da Nova Santa Marta.'},
+  {i:'🏗️',q:'O que a municipalização de 254 hectares da Fazenda Santa Marta em 2008 permitiu?',o:['A construção de um parque ecológico no bairro','A chegada das obras do PAC, que dependiam do terreno ser do município — viabilizando os R$42 milhões de investimento federal','A criação de um novo bairro separado da Nova Santa Marta','A instalação de um distrito industrial na área remanescente'],c:1,r:'A transferência de 254 hectares da Fazenda Santa Marta para o município de Santa Maria foi a condição para o investimento federal do PAC. Sem a municipalização da área, os R$42 milhões iriam para outro município. A mobilização de 300 moradores em Porto Alegre em 2007 foi determinante para esta conquista.'},
+  {i:'🌍',q:'Por que a Nova Santa Marta é frequentemente citada em estudos internacionais de urbanismo?',o:['Por ter o menor índice de criminalidade do Rio Grande do Sul','Por ser uma das maiores e mais bem-sucedidas ocupações urbanas organizadas da América Latina — com planejamento democrático, conquista de serviços e formação de bairro completo','Por ter o maior número de parques e áreas verdes da região sul','Por ser o primeiro bairro do Brasil totalmente digitalizado'],c:1,r:'A Nova Santa Marta é referência internacional porque combina: grande escala (de 50 famílias a 25 mil moradores), organização democrática (sorteio de lotes, assembleias), conquista progressiva de todos os serviços urbanos e formação de identidade comunitária forte. Pesquisadores do mundo visitam o bairro para estudar este modelo.'},
+  {i:'📡',q:'Qual era a proposta do projeto experimental de Redes Livres pensado para a Nova Santa Marta?',o:['Criar uma rede de televisão comercial para vender anúncios','Testar uma rede comunitária sem fio para disponibilizar materiais como uma Wikipédia local e uma rádio com informações importantes aos moradores','Substituir a rede de água por sensores digitais','Criar um aplicativo de transporte particular para o bairro'],c:1,r:'As Redes Livres foram um projeto experimental, com testes e estudos, não uma rede implementada de forma definitiva na comunidade. A ideia era usar uma rede comunitária sem fio para disponibilizar conteúdos locais, materiais educativos inspirados em uma Wikipédia comunitária e uma rádio para facilitar a comunicação de informações importantes entre os moradores.'},
+  {i:'🏘️',q:'Quais são os tipos de comércio e serviços que se desenvolveram na Nova Santa Marta ao longo dos anos?',o:['Apenas pequenos mercadinhos informais','Mercados, lojas de material de construção, agropecuárias, padarias, salões de beleza, farmácias — uma economia local completa que gera empregos para os próprios moradores','Apenas grandes redes de supermercados de outras cidades','Exclusivamente serviços públicos como escola e posto de saúde'],c:1,r:'A Nova Santa Marta desenvolveu uma economia local vibrante: mercados, lojas de material de construção, agropecuárias, padarias, salões de beleza, farmácias, lojas de roupas. Filhos da ocupação abriram seus próprios negócios, gerando emprego para moradores do próprio bairro — um ciclo virtuoso de desenvolvimento econômico comunitário.'},
+  {i:'🚌',q:'O que representou o asfaltamento das ruas por onde passam os ônibus?',o:['Apenas uma melhoria estética sem impacto real','A conexão definitiva do bairro com o resto de Santa Maria, com ônibus que antes não chegavam ou chegavam com muita dificuldade — um direito à mobilidade e ao emprego fora do bairro','O fim do transporte coletivo, pois o asfalto incentivou o carro próprio','Uma medida para facilitar a fiscalização policial no bairro'],c:1,r:'O asfaltamento das vias de ônibus conectou definitivamente a Nova Santa Marta ao resto de Santa Maria. Antes, os ônibus chegavam com dificuldade — ruas de terra, atolamentos no inverno. Moradores sofriam preconceito por chegar sujos de barro. O asfalto não foi só comodidade: foi o direito à mobilidade e ao emprego.'},
+  {i:'🏥',q:'O que a chegada das Unidades Básicas de Saúde (UBS) ao bairro representou?',o:['Apenas consultas de rotina sem impacto na saúde coletiva','O fim da necessidade de ir ao Centro de Santa Maria para atendimentos básicos — saúde primária dentro do próprio território, com vacinas, consultas e acompanhamento de famílias','A construção de um hospital completo dentro do bairro','A extinção dos postos de saúde no Centro de Santa Maria'],c:1,r:'Antes das UBS, moradores precisavam percorrer longas distâncias até o centro de Santa Maria para consultas básicas — um desafio enorme para famílias sem carro. A instalação das Unidades Básicas de Saúde trouxe o cuidado para dentro do território, incluindo a UBS Eder Pompeu no Alto da Boa Vista.'},
+  {i:'📰',q:'O Diário de Santa Maria publicou reportagem em 2020 sobre um marco importante da Nova Santa Marta. Qual?',o:['O 29º aniversário da ocupação, com festa para toda a comunidade','O início da entrega de escrituras de propriedade — "Após quase três décadas, casas da Nova Santa Marta começam a ser regularizadas"','A eleição do primeiro morador originário do bairro como vereador','A inauguração do Colégio Marista com todas as séries'],c:1,r:'Em 2020, o Diário de Santa Maria publicou reportagem intitulada "Após quase três décadas, casas da Nova Santa Marta começam a ser regularizadas", sobre o início da entrega de escrituras de propriedade. Para os moradores que aguardavam desde 1991, o título de propriedade foi a confirmação de que a luta havia valido a pena.'},
+  {i:'👩‍🎓',q:'Qual a trajetória de Suelen Aires Gonçalves, que chegou à Nova Santa Marta criança em 1995?',o:['Tornou-se professora primária na Escola Estadual Santa Marta','Chegou de Uruguaiana, cresceu sem escola local, formou-se em Ciências Sociais na UFSM e é doutoranda em Sociologia na UFRGS — pesquisando as desigualdades que viveu','Tornou-se líder comunitária e vereadora de Santa Maria','Emigrou para outro estado após a regularização fundiária'],c:1,r:'Suelen Aires Gonçalves chegou criança de Uruguaiana em 1995. Cresceu na Nova Santa Marta sem escola no próprio bairro. Formou-se em Ciências Sociais na UFSM e hoje é doutoranda em Sociologia na UFRGS — pesquisando as mesmas desigualdades estruturais que viveu. "A ocupação me fez quem eu sou", disse ela.'},
+  {i:'🎬',q:'Quem protagonizou a trilogia de documentários "Cidade de Lona", "Cidade de Madeira" e "Cidade de Concreto"?',o:['Fernando Menezes, líder da ocupação','Bruno Martins, ator que deu rosto à evolução do bairro nas três fases','Pedro Zoé, que narrou a história em primeira pessoa','Suelen Gonçalves, que interpretou uma moradora da primeira geração'],c:1,r:'Bruno Martins é o ator e protagonista da trilogia de documentários que registra as três fases da Nova Santa Marta: "Cidade de Lona", "Cidade de Madeira" e "Cidade de Concreto". Através de sua atuação, ele deu rosto e voz à transformação do bairro ao longo de 35 anos de história.'},
+  {i:'🌱',q:'O que tornou a Nova Santa Marta um símbolo de que organização popular pode transformar a realidade?',o:['O fato de ter recebido o maior investimento habitacional do governo federal no Rio Grande do Sul','A capacidade de, sem esperar pelo Estado, construir suas próprias estruturas — da creche ao Centro Ecuménico — e depois obrigar o Estado a agir com investimentos públicos','O número de moradores que se tornaram funcionários públicos municipais','A ausência total de conflitos internos ao longo de 35 anos'],c:1,r:'A Nova Santa Marta demonstrou que organização popular funciona como método de transformação social. Sem esperar pelo Estado, a comunidade organizou a ocupação, o sorteio de lotes, a creche, o Centro Ecuménico. Depois, com pressão organizada, conquistou escola estadual, PAC, regularização fundiária, UBS e todos os serviços urbanos.'},
+  {i:'💪',q:'O que Emilia Gross disse sobre o legado da luta da Nova Santa Marta para seus filhos?',o:['"Meus filhos sofreram tanto que prefiro não falar sobre aquela época"','"Foi muito satisfatório ver meus filhos transformados em pessoas com garra, honestidade e solidariedade — a luta da Santa Marta está no nosso sangue"','"Meus filhos foram embora do bairro assim que puderam — a luta não valia o sofrimento"','"A ocupação foi um erro — deveríamos ter esperado pelas casas do governo"'],c:1,r:'Emilia Gross, que chegou em 1993 com dois filhos pequenos sob a lona, disse: "Hoje, avalio que foi muito satisfatório passar por tudo isto, ver meus filhos bem-sucedidos, transformados em pessoas com garra, honestidade, solidários. A luta da Santa Marta está no nosso sangue e jamais pararemos esta luta."'},
+  {i:'⚖️',q:'Qual impasse dificultava a chegada de infraestrutura antes da área ser municipalizada?',o:['A área era do Estado, mas o Município dizia não poder investir plenamente por não ser dono da terra','Os moradores recusavam escolas e saneamento','A comunidade ficava fora de Santa Maria','O PAC exigia que a área continuasse estadual'],c:0,r:'O vídeo explica que a área era estadual, ligada à Fazenda Santa Marta, enquanto o Município alegava limites para atuar por não ser proprietário. Esse impasse travava obras, documentos e infraestrutura, até a luta pela transferência da área ao município.'},
+  {i:'🚧',q:'Que ação de pressão foi lembrada no documentário para chamar atenção das autoridades?',o:['Fechar a BR no antigo trevo da Santa Marta','Interromper as aulas das escolas do bairro','Impedir a entrada de ambulâncias','Bloquear a Creche Sinos de Belém'],c:0,r:'Diante do impasse sobre a área e a falta de infraestrutura, lideranças lembram a ideia de fechar a BR no antigo trevo da Santa Marta. A mobilização buscava chamar a mídia, pressionar governo estadual e garantir a transferência da área ao município.'},
+  {i:'🏛️',q:'Segundo o vídeo, por que a transferência da área para o Município foi fundamental?',o:['Porque aproximou decisões da comunidade, viabilizou o PAC e facilitou documentação e escrituração','Porque acabou com todas as associações de moradores','Porque retirou as escolas do bairro','Porque transformou a Nova Santa Marta em área rural'],c:0,r:'A municipalização aparece no vídeo como decisiva por três razões: tornou possível o PAC, aproximou as decisões da realidade local e facilitou documentos, regularização e escrituração para as famílias.'},
+  {i:'📚',q:'Como o Colégio Marista Santa Marta é descrito por moradores no documentário?',o:['Como uma escola sem relação com a comunidade','Como um marco que acolheu lideranças e ajudou o bairro a se desenvolver','Como uma instituição que tentou impedir a chegada de serviços','Como um prédio usado apenas para eventos esportivos'],c:1,r:'O documentário apresenta o Marista como espaço de acolhida, reuniões e desenvolvimento. Um morador chega a dizer que a Escola Marista foi o que fez a roda girar e que, em seu ponto de vista, é o coração do bairro.'},
+  {i:'🏫',q:'O que as escolas representam na mudança de patamar da Nova Santa Marta?',o:['Apenas prédios sem impacto social','Educação, reconhecimento público e a passagem de uma comunidade esquecida para um bairro de verdade','Um obstáculo para a organização comunitária','Uma conquista restrita a poucas famílias'],c:1,r:'O vídeo afirma que uma comunidade sem educação e sem escolas continua sendo vista como vila esquecida. A sequência Sinos de Belém, Marista, Escola Estadual Santa Marta e Adelmo Simas Genro consolidou o bairro e ampliou direitos.'},
+  {i:'🚌',q:'Que espaço aparece no vídeo como local de reuniões longas sobre transporte coletivo?',o:['A sala 33 da Escola Marista','O salão de festas de um clube privado','A rodoviária de Santa Maria','O gabinete do governador em Porto Alegre'],c:0,r:'Moradores relatam reuniões na sala 33 da Escola Marista, algumas até perto da meia-noite, com empresários e governos municipais para discutir linhas, horários e necessidades reais de uma população maior do que os cálculos oficiais indicavam.'},
+  {i:'🏗️',q:'O que o relato de um morador construindo sua casa mostra sobre a luta atual por moradia?',o:['Que a luta terminou completamente depois do PAC','Que ainda hoje famílias constroem aos poucos para sair do aluguel e conquistar a casa própria','Que só empresas constroem no bairro atualmente','Que ninguém mais deseja morar na comunidade'],c:1,r:'O documentário mostra um morador construindo sua casa parceladamente para sair do aluguel. A cena liga passado e presente: a forma mudou, mas o sonho da moradia própria e a melhoria gradual das ruas continuam vivos.'},
+  {i:'🏡',q:'Qual sentimento Bruno Martins associa à Nova Santa Marta ao falar de sua vida adulta?',o:['Medo constante e vontade de apagar a memória do bairro','Pertencimento, segurança e vínculo afetivo com a comunidade','Indiferença, por não ter relação com o lugar','Apenas desejo de sair e nunca voltar'],c:1,r:'Bruno relata que, mesmo tendo pensado em sair algumas vezes, sempre volta. Para ele, morar na Nova Santa Marta traz sensação de segurança e pertencimento, uma relação afetiva construída acompanhando a transformação da comunidade desde a infância.'}
+]};
+
+// ── Estado do Quiz ──────────────────────────
+var scores={1:0,2:0,3:0};
+var respondidas={1:{},2:{},3:{}};
+var LETRAS=['A','B','C','D'];
+// Pontuação global acumulada entre fases
+var scoreTotal=0;
+
+/* Retorna o total de questões da fase dinamicamente */
+function totalQ(fase){ return (QUIZ[fase]||[]).length; }
+
+/* Inicializa os contadores de UI com o total real do array */
+function inicializarContadores(fase){
+  var tot=totalQ(fase);
+  var el=document.getElementById('tot'+fase);if(el)el.textContent=tot;
+  var tit=document.getElementById('qtit'+fase);if(tit)tit.textContent='🎯 '+tot+' PERGUNTAS — '+(['','CIDADE DE LONA','CIDADE DE MADEIRA','CIDADE DE CONCRETO'][fase]);
+  var pl=document.getElementById('pl'+fase);if(pl)pl.textContent='0/'+tot;
+}
+
+function gerarQuiz(fase){
+  inicializarContadores(fase);
+  var g=document.getElementById('qg'+fase);
+  if(!g||g.children.length>0)return;
+  var qs=QUIZ[fase]||[];
+  qs.forEach(function(q,idx){
+    var btn=document.createElement('button');
+    btn.className='qbtn';
+    btn.id='qb'+fase+'_'+idx;
+    btn.innerHTML=
+      '<span class="q-num">Q'+(idx+1)+'</span>'+
+      '<span class="q-ico">'+q.i+'</span>'+
+      '<span class="q-enunciado">'+q.q.substring(0,62)+(q.q.length>62?'…':'')+'</span>'+
+      '<span class="q-check"></span>';
+    btn.addEventListener('click',function(){abrirQuiz(fase,idx);});
+    g.appendChild(btn);
+  });
+}
+
+function abrirQuiz(fase,idx){
+  pararAudio();
+  var q=QUIZ[fase][idx];if(!q)return;
+  var box=document.getElementById('quizModalBox');
+  var jaRespondida=respondidas[fase][idx]!==undefined;
+  var tot=totalQ(fase);
+
+  /* Garante 4 opções — preenche com placeholder se necessário */
+  var opcoes=q.o.slice(0,4);
+  while(opcoes.length<4)opcoes.push('—');
+
+  var opcHTML='';
+  opcoes.forEach(function(op,i){
+    var cls='qm-opcao';
+    if(jaRespondida){
+      if(i===q.c)cls+=' certa';
+      else if(i===respondidas[fase][idx])cls+=' errada';
+    }
+    opcHTML+=
+      '<button class="'+cls+'" data-idx="'+i+'" '+(jaRespondida?'disabled':'')+'>'+
+      '<strong>'+LETRAS[i]+')</strong> '+op+
+      '</button>';
+  });
+
+  var respostaClass=jaRespondida
+    ?(respondidas[fase][idx]===q.c?'qm-resposta qm-resp-certa':'qm-resposta qm-resp-errada')
+    :'qm-resposta';
+  var resTitulo=jaRespondida
+    ?(respondidas[fase][idx]===q.c?'✅ CORRETO! +10 pontos':'❌ ERRADO — Resposta certa: '+LETRAS[q.c]+')')
+    :'';
+
+  box.innerHTML=
+    '<div class="qm-num">FASE '+fase+' · PERGUNTA '+(idx+1)+'/'+tot+'</div>'+
+    '<span class="qm-ico">'+q.i+'</span>'+
+    '<div class="qm-pergunta">'+q.q+'</div>'+
+    '<div class="qm-opcoes">'+opcHTML+'</div>'+
+    '<div class="'+respostaClass+'" id="qmResp"'+(jaRespondida?' style="display:block"':'')+'>'+
+      '<div class="qm-resp-titulo">'+resTitulo+'</div>'+
+      '<div class="qm-resp-txt">'+q.r+'</div>'+
+    '</div>'+
+    '<div class="qm-btns">'+
+      '<button class="qm-btn-audio" id="qmAudio">🔊 OUVIR</button>'+
+      '<button class="qm-btn-fechar" id="qmFechar">FECHAR</button>'+
+    '</div>';
+
+  document.getElementById('quizModal').classList.add('ativo');
+
+  /* Eventos das opções */
+  box.querySelectorAll('.qm-opcao').forEach(function(el){
+    if(!jaRespondida){
+      el.addEventListener('click',function(){
+        var escolha=parseInt(this.getAttribute('data-idx'));
+        respondidas[fase][idx]=escolha;
+        var acertou=escolha===q.c;
+        if(acertou){
+          scores[fase]+=10;     /* +10 pontos por acerto */
+          scoreTotal+=10;
+          falar('Correto! Você ganhou dez pontos. '+q.r);
+        } else {
+          falar('Resposta errada. A correta é '+LETRAS[q.c]+', '+q.o[q.c]+'. '+q.r);
+        }
+        atualizarScore(fase);
+
+        /* Visual das opções */
+        box.querySelectorAll('.qm-opcao').forEach(function(o,i){
+          if(i===q.c)o.classList.add('certa');
+          else if(i===escolha)o.classList.add('errada');
+          o.disabled=true;
+        });
+
+        var resp=document.getElementById('qmResp');
+        resp.className='qm-resposta '+(acertou?'qm-resp-certa':'qm-resp-errada');
+        resp.innerHTML=
+          '<div class="qm-resp-titulo">'+(acertou?'✅ CORRETO! +10 pontos':'❌ ERRADO — Resposta certa: '+LETRAS[q.c]+')')+'</div>'+
+          '<div class="qm-resp-txt">'+q.r+'</div>';
+        resp.style.display='block';
+
+        /* Marcar botão no grid */
+        var qbtn=document.getElementById('qb'+fase+'_'+idx);
+        if(qbtn){
+          qbtn.classList.add('respondida');
+          qbtn.querySelector('.q-check').textContent=acertou?'✅':'❌';
+        }
+      });
+    }
+  });
+
+  document.getElementById('qmAudio').addEventListener('click',function(){
+    falar('Pergunta '+(idx+1)+'. '+q.q+'. Alternativa correta: '+LETRAS[q.c]+'. '+q.o[q.c]+'. '+q.r);
+  });
+  document.getElementById('qmFechar').addEventListener('click',function(){
+    document.getElementById('quizModal').classList.remove('ativo');
+    pararAudio();
+  });
+}
+
+function atualizarScore(fase){
+  var tot=totalQ(fase);
+  var resp=Object.keys(respondidas[fase]).length;
+  var pct=tot>0?Math.round(resp/tot*100):0;
+
+  var sc=document.getElementById('sc'+fase);if(sc)sc.textContent=scores[fase];
+  var rc=document.getElementById('rc'+fase);if(rc)rc.textContent=resp;
+  var totEl=document.getElementById('tot'+fase);if(totEl)totEl.textContent=tot;
+  var pb=document.getElementById('pb'+fase);if(pb)pb.style.width=pct+'%';
+  var pl=document.getElementById('pl'+fase);if(pl)pl.textContent=resp+'/'+tot;
+}
+
+// ── MEMORIAL DATA ────────────────────────────
+var MEMORIAL=[
+  {sep:true,l:'⛺ FASE 1 — CIDADE DE LONA (1991–1993)'},
+  {i:'🌾',t:'304 Hectares Abandonados',a:'1984–1991',x:'A Lei Estadual 7.933/1984 autorizou a doação de 340 ha da Fazenda Santa Marta à Cohab para moradias populares em 5 anos. Em 1991, após 7 anos de descumprimento, o MNLM identificou 304 hectares completamente ociosos — o argumento jurídico central da ocupação.'},
+  {i:'📋',t:'Dois Anos de Reuniões Secretas',a:'1990–1991',x:'Entre abril de 1990 e dezembro de 1991, Fernando Menezes coordenou dezenas de reuniões em sindicatos, igrejas e casas de lideranças pela periferia de Santa Maria. Sem internet, sem celular — tudo feito boca a boca, de forma discreta para não chamar atenção das autoridades.'},
+  {i:'👩',t:'Guilherminda Barcellos — A Semente',a:'1990',x:'Uma forte chuva atingiu a casa de dona Guilherminda Barcellos na Vila Cai-Cai Mirim. Fernando Menezes foi visitá-la. Ali, naquela conversa sobre moradia e vulnerabilidade, brotou na cabeça do líder do MNLM a ideia concreta de organizar uma ocupação em Santa Maria.'},
+  {i:'⛪',t:'Paróquia São João Evangelista — O Ponto de Partida',a:'7 Dez. 1991',x:'A Paróquia São João Evangelista, na Vila Caramelo (Região Oeste), foi o ponto de concentração das famílias antes da caminhada histórica. O Padre Irineu Ortiz e o Padre Carlos Menegáis, Vigário Auxiliar, foram figuras centrais desde o primeiro momento. Segundo depoimentos em documentários históricos, o Padre Irineu abriu as portas da paróquia e utilizou seu próprio veículo para apoiar logisticamente as famílias naquela madrugada.'},
+  {i:'🚶',t:'Grupos Separados para Não Chamar Atenção',a:'7 Dez. 1991',x:'Na noite da ocupação, as famílias se dividiram em pequenos grupos que partiram em horários escalonados e por rotas diferentes pela Região Oeste. Quando a polícia parou um grupo e perguntou para onde iam, um ocupante respondeu que era para um evento religioso. A resposta condizia com a caminhada com velas e desarmou a suspeita.'},
+  {i:'✊',t:'Passamos o Arame — A Frase Histórica',a:'7 Dez. 1991',x:'Ao cruzar o arame da fazenda, Fernando Menezes ergueu o punho e declarou: "Passamos o arame, agora é esperar e lutar." Leonel Pacheco relata que aquele momento ficou gravado para sempre em sua memória. A maior angústia era não saber se conseguiriam permanecer.'},
+  {i:'⛺',t:'As Primeiras Barracas de Lona Preta',a:'7 Dez. 1991',x:'Com lona preta, estacas e barbante, as famílias ergueram seus primeiros abrigos no campo aberto da fazenda. Cerca de 50 famílias na primeira noite. O chão era de terra batida, sem nenhuma infraestrutura. Era o nascimento da Cidade de Lona.'},
+  {i:'🚜',t:'Valas Abertas pela Polícia',a:'Dez. 1991',x:'Nos dias seguintes, a Brigada Militar abriu valas nas estradas de acesso para impedir que caminhões com mais famílias e materiais cruzassem a divisa da fazenda. Mesmo assim, os novos ocupantes chegaram a pé, pelos campos, por caminhos alternativos. A comunidade cresceu exponencialmente.'},
+  {i:'🌙',t:'A Primeira Noite de Natal nas Lonas',a:'25 Dez. 1991',x:'O primeiro Natal foi sob as lonas, no frio do fim de ano gaúcho, sem luz elétrica, sem água encanada. As famílias reuniram o que tinham para as crianças. Solidariedade e esperança eram os presentes mais importantes daquela noite histórica.'},
+  {i:'🐴',t:'Água do Jockey Club',a:'1991–1992',x:'Nos primeiros meses, os moradores caminhavam longas distâncias até o Jockey Club para buscar água diretamente das torneiras onde os cavalos eram lavados. Era o que havia para beber. Para afazeres domésticos, recorriam às sangas — córregos locais. A sobrevivência dependia dessa busca diária.'},
+  {i:'🪣',t:'As Bicas Coletivas da Corsan',a:'Final 1992 – Início 1993',x:'Entre o final de 1992 e o início de 1993, a Corsan instalou as famosas "bicas" — torneiras coletivas de uso compartilhado. O trajeto encurtou significativamente. As filas para encher baldes tornaram-se pontos vitais de conversa, estratégia e união entre as famílias das lonas pretas.'},
+  {i:'💧',t:'Água Encanada Chega às Casas',a:'A partir de 1993',x:'A partir de 1993, a Corsan começou a abrir as valetas para finalmente levar a água encanada ao interior das casas. Um processo gradual que transformou a vida das famílias — da longa caminhada até o Jockey Club à torneira dentro de casa.'},
+  {i:'🥁',t:'Panelas por Água e Atenção',a:'Anos 1990',x:'Relatos do documentário contam que moradores foram até a prefeitura cansados, com fome e batendo panelas para pedir água, luz e atenção do poder público. A mobilização coletiva pressionava governos que diziam não poder agir porque a área ainda não estava regularizada.'},
+  {i:'💡',t:'Dona Terezinha Menezes — A Luz Emprestada',a:'Dez. 1991',x:'Moradora da Vila Prado, vizinha à fazenda, dona Terezinha Menezes cedeu energia elétrica de sua casa para os primeiros ocupantes. Um gesto de solidariedade fundamental que permitiu às famílias sobreviverem nas primeiras noites no campo aberto.'},
+  {i:'🕊️',t:'A Primeira Celebração Ecuménica',a:'Dez. 1991',x:'Ainda na primeira semana, num pôr do sol de terça-feira, aconteceu a primeira celebração ecuménica: Padre Carlos Menegáis (Católico), Irmã Terezinha Ófima, Pastor Marcos Birte (Luterano), Reverendo João Fortes (Anglicano) e Pastor Cláudio Morais (Metodista). O Padre Irineu Ortiz, pároco da Paróquia São João Evangelista, sempre teve presença muito importante ao lado destes líderes. Cinco tradições unidas por uma causa.'},
+  {i:'🎲',t:'O Sorteio Democrático dos Lotes',a:'1992',x:'Os terrenos foram sorteados publicamente — papeizinhos com número de quadra e lote numa caixinha. Nenhuma família foi privilegiada. Nenhum líder escolheu os melhores lotes. Fernando Menezes recorda: "Era uma emoção atrás da outra." A democracia como método, desde o primeiro dia.'},
+  {i:'🏕️',t:'Vila 7 de Dezembro — A Pioneira',a:'1991',x:'A primeira vila recebeu o nome da data histórica da ocupação. Está lá até hoje, a mais antiga das sete vilas da Nova Santa Marta. Os primeiros moradores que chegaram na madrugada de 7 de dezembro de 1991 são os fundadores deste marco urbano.'},
+  {i:'🏘️',t:'Vila 10 de Outubro — As 97 Famílias',a:'1992',x:'A data da ordem judicial de desocupação da Fernandes Viera era 10 de outubro de 1992. As 97 famílias que viviam naquela ocupação foram assentadas na Nova Santa Marta, no local que ganhou este nome em homenagem à data de sua chegada. Vila 7 de Dezembro e Vila 10 de Outubro — as duas pioneiras.'},
+  {i:'⚖️',t:'Sandra Feltrin — A Guerreira Jurídica',a:'1991',x:'A advogada Sandra Feltrin, do escritório Wagner Associados, foi a primeira linha de defesa jurídica dos ocupantes. Quando a Brigada Militar tentou desocupar a área, Sandra estava nos tribunais. Falecida prematuramente, a Praça Sandra Feltrin perpetua sua memória na comunidade.'},
+  {i:'📰',t:'Jornal A Razão Registra o Nascimento',a:'1991',x:'O Jornal A Razão de Santa Maria foi um dos primeiros a fotografar as barracas de lona preta e registrar o nascimento da ocupação. Estas fotografias históricas são hoje patrimônio documental inestimável — o nascimento de uma comunidade, capturado em película.'},
+  {sep:true,l:'🏠 FASE 2 — CIDADE DE MADEIRA (1994–2006)'},
+  {i:'⛪',t:'O Centro Ecuménico — O Pulmão da Comunidade',a:'1992',x:'O Centro Ecuménico nasceu da necessidade de ter um espaço para celebrar e fazer reuniões. O Pastor Cláudio conseguiu um velho salão do Colégio Centenário (escola metodista) e o trouxe para a Santa Marta. Todas as pautas — água, luz, escola, ruas — passaram por ali. Pedro Zoé o chamava de "pulmão da comunidade".'},
+  {i:'🙏',t:'A Oração que Definiu um Local',a:'1992',x:'Havia polêmica sobre o local do Centro Ecuménico. O Pastor Cláudio propôs: "Vamos orar e aceitar o revelado." O local indicado pelo gerente da Corsan — mais alto e centralizado — foi aceito. Menos de um ano depois, Pedro Zoé admitia: era o melhor lugar. Hoje ali ficam o Colégio Marista e a Creche Sinos de Belém.'},
+  {i:'👶',t:'Creche Sinos de Belém — Fruto da Fé Ecuménica',a:'1993',x:'Na celebração ecuménica de Natal de 1993, crianças do Projeto Renacer entraram gritando "queremos creche!". O Pastor Cláudio disse: "Não podemos decepcioná-las." Um padre italiano falecido deixou R$7.000 para a América Latina. O CEBI construiu a creche. A Irmã Terezinha foi a articuladora. A fé virou tijolo.'},
+  {i:'🍞',t:'Jésima — A Padaria que Virou Escola',a:'1993',x:'A Jésima era uma padaria ecuménica de geração de renda. Quando ficou ociosa, as Irmãs Franciscanas da UFN reformaram o espaço e o incorporaram à Creche Sinos de Belém, aumentando as vagas para as crianças do bairro. Um projeto de geração de renda que se transformou em cuidado infantil.'},
+  {i:'📚',t:'Escola Marista Santa Marta — Pedra Angular de 1997',a:'1996–1997',x:'Os Irmãos Maristas instalaram-se na comunidade em 1996, atendendo de pré-escola à 4ª série. Em 1997, Ir. Pedro Vilmar Ost lançou a pedra angular do prédio próprio. O primeiro ponto fixo de educação formal foi mais que uma escola — foi o símbolo de que a comunidade era real, permanente e merecedora.'},
+  {i:'🏛️',t:'Fernando Menezes — Vereador (1997–2000)',a:'1997',x:'O líder da ocupação foi eleito vereador de Santa Maria em 1997. Depois exerceu cargo de secretário municipal (2001–2004). A luta da Nova Santa Marta chegava às estruturas de poder. Uma conquista política nascida das barracas de lona.'},
+  {i:'🎓',t:'Convênio UFSM-Estado-Município',a:'1999',x:'Governo Olívio Dutra, prefeitura e UFSM firmaram convênio para o primeiro cadastro socioeconômico oficial da Nova Santa Marta. Projetos técnicos de reorganização espacial foram elaborados — o primeiro passo concreto rumo à regularização fundiária que viria décadas depois.'},
+  {i:'🏫',t:'Escola Estadual Santa Marta',a:'2001',x:'Inaugurada em julho de 2001, no governo Olívio Dutra. Localizada na Vila Núcleo Central, atendia as séries mais avançadas. O bairro que não existia no mapa oficial passou a ter escola estadual — o reconhecimento do Estado chegava pela educação.'},
+  {i:'💡',t:'Cadastramento Oficial de Luz e Água',a:'2001',x:'As famílias das Vilas Marista I e II foram cadastradas e passaram a receber água e luz oficiais. Ter uma conta de luz e água no próprio nome foi uma conquista simbólica enorme — o Estado reconhecendo a existência das famílias e do bairro.'},
+  {i:'🏫',t:'Escola Adelmo Simas Genro',a:'2003',x:'Inaugurada no governo Valdeci Oliveira (PT), tornou-se uma das maiores escolas municipais de Santa Maria — capacidade para 700 alunos. Completava a rede educacional do bairro que, em 1991, não tinha nenhuma escola própria.'},
+  {i:'🛣️',t:'Primeira Rua Asfaltada — Rua Mallman Filho',a:'2003',x:'A Rua Mallman Filho foi a primeira a receber asfalto na Nova Santa Marta. Moradores que pisavam na lama nos dias de chuva e sofriam preconceito nos ônibus celebraram muito. O asfalto foi mais que conforto — foi o início do respeito urbano merecido pela comunidade.'},
+  {i:'🥾',t:'Ruas de Terra, Galochas e Pontilhões',a:'Anos 1990–2000',x:'Antes do asfalto, muitas ruas eram estradas de terra, com sangas, barro e buracos que viravam açudes quando chovia. Moradores relatam levar muda de roupa, usar galochas para chegar ao ônibus e fazer mutirões para construir pontilhões para as crianças irem à escola.'},
+  {i:'🚌',t:'Paradas de Ônibus em Mutirão',a:'Anos 2000',x:'O transporte coletivo era insuficiente para o tamanho da população. Além de reivindicar linhas e horários, moradores construíram paradas em mutirão, com caixinhas de concreto e pilares, para proteger quem esperava ônibus nas ruas do bairro.'},
+  {i:'🗺️',t:'Nova Santa Marta no Mapa Oficial',a:'2007',x:'Em 2007, dezesseis anos após a ocupação, o bairro passou a figurar oficialmente no mapa de Santa Maria. O bairro que "não existia", que não tinha endereço reconhecido, ganhou existência jurídica e cartográfica. Um marco de legitimidade conquistado com luta.'},
+  {i:'🚌',t:'300 Moradores em Porto Alegre',a:'30 Abr. 2007',x:'300 moradores foram a Porto Alegre exigir a transferência de 254 hectares da fazenda para o município — condição para o investimento do PAC. Bloquearam vias e fizeram pressão. O gesto radical foi necessário: sem a municipalização, R$42 milhões iriam para outra cidade.'},
+  {sep:true,l:'🏙️ FASE 3 — CIDADE DE CONCRETO (2007–2026)'},
+  {i:'⚒️',t:'PAC — R$42 Milhões na Comunidade',a:'2008',x:'Em 23 de junho de 2008, o escritório do PAC foi inaugurado dentro do CMID. Dilma Rousseff, ministra-chefe da Casa Civil, veio pessoalmente ao bairro. Esgoto, drenagem, pavimentação e iluminação transformaram radicalmente a estrutura urbana — a maior obra da história do bairro.'},
+  {i:'🏛️',t:'Municipalização — Três Efeitos Decisivos',a:'2007–2008',x:'A transferência da área para o Município aproximou as decisões da realidade da comunidade, viabilizou o PAC e abriu caminho para documentos e escrituração. O documentário mostra que essa mudança jurídica foi tão importante quanto as obras visíveis nas ruas.'},
+  {i:'🚧',t:'O Antigo Trevo da Santa Marta',a:'2007',x:'Para chamar atenção das autoridades, lideranças lembram a pressão no antigo trevo da Santa Marta, antes do viaduto. Fechar a BR era uma forma extrema de tornar visível uma comunidade que já existia, mas ainda lutava para ser reconhecida oficialmente.'},
+  {i:'💻',t:'CMID — Robótica da Periferia para o Mundo',a:'2008',x:'O Centro Marista de Inclusão Digital levou a Robótica Livre da Nova Santa Marta ao FISL, Latinoware e Campus Party. Leandro Schneider fez parte dessa equipe de trabalho junto com outros educadores, estudantes e colaboradores do CMID em projetos como o CMID Car, veículo com lixo eletrônico reciclado, e uma Cadeira Motorizada adaptada — mostrando que a periferia tem potencial para desenvolver tecnologias e oportunizar aprendizado para crianças e jovens se tornarem profissionais com qualificação tecnológica.'},
+  {i:'🏥',t:'Unidades Básicas de Saúde',a:'2010',x:'A saúde primária chegou ao bairro: consultas, vacinas, acompanhamento de famílias. A UBS Eder Pompeu no Alto da Boa Vista homenageia o líder comunitário e idealizador da Rádio Comunitária. Os moradores não precisam mais ir ao Centro para atendimentos básicos.'},
+  {i:'👥',t:'CRAS Oeste — Assistência Social',a:'2010',x:'O Centro de Referência de Assistência Social da Região Oeste passou a atender famílias em situação de vulnerabilidade dentro do próprio bairro. Benefícios sociais, orientação familiar e acompanhamento — o Estado presente no cotidiano de quem mais precisa.'},
+  {i:'🌳',t:'Praça Sandra Feltrin',a:'2010',x:'A praça em memória da advogada guerreira que defendeu os ocupantes nos tribunais. Um espaço de lazer, convivência e memória — onde crianças brincam no mesmo chão que seus avós um dia lutaram para conquistar.'},
+  {i:'📜',t:'Regularização Fundiária — O Sonho em Papel',a:'2019',x:'Após quase três décadas da ocupação, as primeiras escrituras de propriedade começaram a ser entregues em 2019. Para os moradores que aguardavam desde aquela madrugada de dezembro de 1991, receber o documento foi um momento de choro. A luta de uma vida inteira, finalmente em papel e tinta.'},
+  {i:'🙏',t:'Projeto Francisco Espinelli',a:'2000s',x:'Centro espírita de apoio à promoção humana, educação e acolhimento social para famílias vulneráveis. Um pilar silencioso e constante no cuidado do bairro — presente nas horas de necessidade, sem fazer barulho, mas fazendo diferença.'},
+  {i:'🏦',t:'Ponto Bancário — Inclusão Financeira',a:'2024',x:'Em 2024, o bairro recebeu um Ponto Bancário próprio. A inclusão financeira de cerca de 25 mil moradores dentro do próprio território foi uma conquista importante — antes, qualquer transação básica exigia deslocamento ao Centro de Santa Maria.'},
+  {i:'🌸',t:'EMEI Gianna Grassi Didonet — Primeira Infância',a:'2024',x:'A Escola Municipal de Educação Infantil Gianna Grassi Didonet foi aberta em 2024, ampliando o atendimento à primeira infância na Nova Santa Marta. Mais uma conquista educacional do bairro que, em 1991, não tinha nem uma escola.'},
+  {i:'🥖',t:'Projeto Pão da Vida',a:'18 Fev. 2026',x:'Inaugurado na Comunidade São Marcelino Champagnat, onde nasceu o primeiro Centro Ecuménico. Iniciativa do Padre Rogério e Bispo Dom Leomar, coordenado pelas Sras. Elenir e Mariza. No mesmo solo sagrado da fé ecuménica, nasce um novo projeto de solidariedade e alimento.'},
+  {i:'🎓',t:'Colégio Marista Santa Marta — Ensino Médio',a:'2026',x:'Em 2026, o Colégio Marista Santa Marta inaugura o Ensino Médio — completando o ciclo educacional que a comunidade esperou com amor por anos. Outras escolas do bairro já tinham Ensino Médio, mas era um desejo especial ver o Marista, que acompanhou gerações desde a infância, oferecer também a formação completa.'},
+  {i:'🌟',t:'35 Anos — Um Legado para a América Latina',a:'2026',x:'De 50 famílias em barracas de lona preta na madrugada de 7 de dezembro de 1991 a um bairro de 25 mil pessoas, com escolas, saúde, asfalto, regularização fundiária e Colégio completo. A Nova Santa Marta é referência internacional de ocupação urbana organizada. Um legado de luta, fé e conquista coletiva.'}
+];
+
+// ── CONQUISTAS ───────────────────────────────
+var CONQUISTAS=[
+  {i:'🏠',n:'A Ocupação',y:'7 Dez. 1991',d:'50 famílias pioneiras derrubam as cercas da Fazenda Santa Marta e erguem as primeiras barracas de lona preta no campo aberto.'},
+  {i:'⛪',n:'1ª Celebração Ecuménica',y:'Dez. 1991',d:'Católicos, Luteranos, Anglicanos e Metodistas se unem na primeira celebração de fé da comunidade — o ecumenismo como estratégia e espiritualidade.'},
+  {i:'🎲',n:'Sorteio Democrático dos Lotes',y:'1992',d:'Distribuição pública e igualitária dos terrenos por sorteio — nenhum líder privilegiado, cada família com a mesma chance.'},
+  {i:'🏕️',n:'Vila 7 de Dezembro',y:'1991',d:'Primeira vila da Nova Santa Marta — pioneira da ocupação, batizada com a data histórica da madrugada que mudou tudo.'},
+  {i:'🏘️',n:'Vila 10 de Outubro',y:'1992',d:'97 famílias vindas da ocupação da Fernandes Viera são assentadas e formam a segunda vila histórica do bairro.'},
+  {i:'🪣',n:'Bicas Coletivas da Corsan',y:'Final 1992',d:'As primeiras torneiras coletivas encurtam o trajeto ao Jockey Club e criam pontos de encontro e solidariedade nas filas.'},
+  {i:'💧',n:'Água Encanada nas Casas',y:'A partir de 1993',d:'A Corsan abre valetas e a água encanada chega progressivamente ao interior das casas — da lona à torneira doméstica.'},
+  {i:'⚡',n:'Energia Elétrica Oficial',y:'1993',d:'Da energia emprestada pela dona Terezinha Menezes à rede elétrica oficial — luz para todas as famílias do bairro.'},
+  {i:'⛪',n:'Centro Ecuménico',y:'1992',d:'O pulmão da comunidade — onde todas as demandas e pautas passavam, unindo diferentes religiões em torno da promoção da vida.'},
+  {i:'👶',n:'Creche Sinos de Belém',y:'1993',d:'Construída pelo CEBI com doação de padre italiano — a fé ecuménica transformada em cuidado concreto às crianças do bairro.'},
+  {i:'📚',n:'Escola Marista Santa Marta',y:'1996',d:'Primeira escola do bairro, fundada pelos Irmãos Maristas — o ponto de partida que formou gerações desde a infância.'},
+  {i:'🏫',n:'Escola Estadual Santa Marta',y:'2001',d:'Escola estadual no Núcleo Central, inaugurada no governo Olívio Dutra — o reconhecimento do Estado chegando pela educação.'},
+  {i:'🏫',n:'Escola Adelmo Simas Genro',y:'2003',d:'Uma das maiores escolas municipais de Santa Maria, com capacidade para 700 alunos, completa a rede educacional do bairro.'},
+  {i:'🌸',n:'EMEI Gianna Grassi Didonet',y:'2024',d:'Escola Municipal de Educação Infantil que amplia o atendimento à primeira infância na Nova Santa Marta em 2024.'},
+  {i:'🛣️',n:'1ª Rua Asfaltada — Mallman Filho',y:'2003',d:'O fim da lama e o início do respeito urbano — a primeira rua asfaltada representou dignidade para toda a comunidade.'},
+  {i:'🗺️',n:'Nova Santa Marta no Mapa Oficial',y:'2007',d:'Dezesseis anos após a ocupação, o bairro ganha existência jurídica e cartográfica oficial no mapa de Santa Maria.'},
+  {i:'⚒️',n:'Obras do PAC',y:'2008',d:'R$42 milhões do Programa de Aceleração do Crescimento transformam radicalmente a infraestrutura urbana — esgoto, drenagem, asfalto.'},
+  {i:'📜',n:'Regularização Fundiária',y:'2019',d:'As primeiras escrituras de propriedade são entregues — quase três décadas após a ocupação, o sonho da casa própria em papel.'},
+  {i:'👥',n:'CRAS Oeste',y:'2010',d:'Centro de Referência de Assistência Social atende famílias vulneráveis dentro do próprio território do bairro.'},
+  {i:'🌳',n:'Praça Sandra Feltrin',y:'2010',d:'Homenagem à advogada guerreira que defendeu juridicamente os ocupantes — um espaço de lazer, memória e reconhecimento.'},
+  {i:'🚌',n:'Asfaltamento das Vias de Ônibus',y:'2008',d:'As vias principais pavimentadas conectam definitivamente a Nova Santa Marta ao resto de Santa Maria — direito à mobilidade.'},
+  {i:'🧱',n:'Paradas de Ônibus em Mutirão',y:'2000s',d:'Moradores constroem abrigos de ônibus com concreto, pilares e trabalho voluntário, enquanto seguem reivindicando linhas e horários.'},
+  {i:'🏦',n:'Ponto Bancário',y:'2024',d:'Inclusão financeira para 25 mil moradores dentro do próprio bairro — sem precisar ir ao Centro para transações básicas.'},
+  {i:'🍽️',n:'Mesa Brasil',y:'2005',d:'Programa de combate à fome e segurança alimentar — garantindo refeições às famílias mais vulneráveis do bairro.'},
+  {i:'🏥',n:'Unidades Básicas de Saúde',y:'2010',d:'Saúde primária dentro do próprio bairro — consultas, vacinas e acompanhamento de famílias sem precisar sair da comunidade.'},
+  {i:'🕊️',n:'Centro Madre Francisca Lechner',y:'2005',d:'Espaço de acolhimento, cultura e desenvolvimento social para as famílias do bairro.'},
+  {i:'🏢',n:'Centro Social Marista',y:'2000',d:'Projetos sociais, esporte, cultura e inclusão digital via CMID — o Marista além da sala de aula.'},
+  {i:'🙏',n:'Projeto Francisco Espinelli',y:'2000s',d:'Centro espírita de promoção humana, educação e acolhimento social — pilar silencioso e constante na rede de cuidado do bairro.'},
+  {i:'🎓',n:'ENEM e Vestibulares',y:'2010s',d:'Jovens da Nova Santa Marta conquistam vagas em universidades públicas e privadas — filhos das barracas de lona nas salas de aula universitárias.'},
+  {i:'🎓',n:'Colégio Marista Santa Marta',y:'2026',d:'O ciclo educacional completado: o Colégio Marista Santa Marta inaugura o Ensino Médio — um desejo especial da comunidade realizado após anos de espera.'},
+  {i:'🏆',n:'CUFA RS — Praça CEU Sandra Feltrin',y:'2020s',d:'A CUFA RS promove inclusão social com esporte, robótica, dança, cultura e qualificação profissional para jovens na Praça CEU Sandra Feltrin — protagonismo juvenil e cidadania.'}];
+
+// ── CURIOSIDADES ─────────────────────────────
+var CURIOSIDADES=[
+  {s:true,c:'ct',l:'💻 TECNOLOGIA · CMID · INCLUSÃO DIGITAL'},
+  {i:'💻',t:'CMID — Centro Marista de Inclusão Digital',x:'O CMID tornou-se um dos centros de tecnologia social mais reconhecidos do Rio Grande do Sul. Jovens e adultos acessavam gratuitamente informática, internet, cursos e projetos de robótica. Foi inclusive dentro do CMID que funcionou o escritório do PAC em 2008.'},
+  {i:'🤖',t:'CMID Car e Cadeira Motorizada',x:'Leandro Schneider integrou uma equipe formada por educadores, estudantes e colaboradores do CMID em projetos como o CMID Car, veículo construído com lixo eletrônico reciclado, e uma Cadeira Motorizada adaptada para pessoas com deficiência. Esses trabalhos coletivos mostraram que a periferia tem potencial para desenvolver tecnologias e oportunizar aprendizado para crianças e jovens se tornarem profissionais com qualificação tecnológica.'},
+  {i:'🌐',t:'FISL, Latinoware e Campus Party',x:'Os projetos do CMID foram apresentados em três dos maiores eventos de tecnologia da América Latina: FISL (Fórum Internacional do Software Livre), Latinoware e Campus Party. A Nova Santa Marta na vanguarda tecnológica internacional.'},
+  {i:'🛠️',t:'Eloir Rockenbach — Idealizador do CMID',x:'Foi o visionário que deu início ao Centro Marista de Inclusão Digital. Estabeleceu as bases para que a tecnologia se tornasse ferramenta de emancipação e cidadania para a periferia — não apenas um instrumento de consumo, mas de criação.'},
+  {i:'📺',t:'CMID na Mídia Nacional',x:'O CMID foi destaque na RBS TV, TV Pampa e Band. As reportagens mostraram jovens da periferia de Santa Maria transformando lixo eletrônico em robótica funcional — um modelo que inspirou outras comunidades do Brasil.'},
+  {i:'🎓',t:'Do CMID para a Universidade',x:'Dezenas de jovens que fizeram seus primeiros cursos de informática no CMID chegaram às universidades em cursos de tecnologia, engenharia e ciências da computação. A inclusão digital foi a porta de entrada para o ensino superior.'},
+  {s:true,c:'',l:'🎓 LIDERANÇAS EDUCACIONAIS'},
+  {i:'📖',t:'Ir. Pedro Vilmar Ost — O Arquiteto do Acolhimento',x:'Primeiro diretor da Escola Marista Santa Marta, autor da filosofia de que a escola é "ponto de partida e não de chegada". Lançou a pedra angular em 1997, criando um ambiente de acolhimento que formaria gerações.'},
+  {i:'🏫',t:'Sala 33 — Reuniões Até Tarde',x:'O documentário registra a Escola Marista como espaço de reuniões comunitárias longas, incluindo encontros na sala 33 sobre transporte coletivo. Moradores, lideranças, empresários e governo municipal discutiam até tarde para provar que a população precisava de mais linhas e horários.'},
+  {i:'🏗️',t:'Sérgio Adolfo — Articulação e PAC',x:'Professor da Escola Marista que atuou como articulador social, unindo lideranças para reivindicar melhorias estruturais. Teve papel decisivo na mobilização que garantiu as obras do PAC para o bairro.'},
+  {i:'👨‍🏫',t:'Leandro Heckler — Educação e Cidadania',x:'Professor da Escola Marista que atuou na formação cidadã e articulação política, fundamental para pressionar por políticas públicas e investimentos federais para a urbanização da comunidade.'},
+  {i:'🎶',t:'Irmão Rovilho Moro — Evangelização e Cultura',x:'Responsável por iniciar o Coral na Escola Marista. Realizou trabalhos de evangelização e auxílio direto às famílias em vulnerabilidade, unindo fé, cultura e serviço social.'},
+  {s:true,c:'',l:'✊ LIDERANÇAS COMUNITÁRIAS'},
+  {i:'📻',t:'Eder Pompeu — A Voz da Nova Santa Marta',x:'Líder comunitário e idealizador da Rádio Comunitária. Seu legado foi tão marcante que a Unidade Básica de Saúde do Alto da Boa Vista leva seu nome — a UBS Eder Pompeu.'},
+  {i:'📜',t:'Elson — O Guardião da Memória Oral',x:'Elson preserva a história viva da ocupação com detalhes únicos: o trajeto, a organização dos grupos, o episódio com a polícia na noite de 7 de dezembro. Sua memória é um patrimônio inestimável da comunidade.'},
+  {i:'🧑',t:'Pedro Zoé — Memória Viva do Ecumenismo',x:'Pedro Zoé é uma das vozes mais importantes do resgate histórico da Nova Santa Marta. Além de ter coordenado o CEBI e articulado a construção da Creche Sinos de Belém, ele preserva relatos raros como o "rancho anônimo" — quando um desconhecido deixou um rancho completo na porta da creche pedindo apenas que não perguntassem seu nome — e tantos outros episódios que documentam a solidariedade e a fé que sustentaram a comunidade nos primeiros anos.'},
+  {i:'🏗️',t:'Leonel Pacheco — O Articulador do PAC',x:'Leonel Pacheco foi morador fundador e liderança fundamental na consolidação do bairro. Em reunião na Escola Marista, identificou que havia verbas federais disponíveis, mas que a área precisava ser municipalizada. Liderou a mobilização que reuniu 300 moradores em Porto Alegre e articulou politicamente a aprovação do PAC — viabilizando R$42 milhões em obras de infraestrutura. Seu punho erguido ao lado de Fernando Menezes na madrugada da ocupação ficou eternizado na memória da comunidade.'},
+  {i:'👷',t:'Carlos Alberto Souza Martins — Organização e Cultura',x:'Engajado a partir de 3 de junho de 1993, Carlos Alberto tornou-se liderança fundamental: organizou os sorteios e fiscalização de lotes com prazos rígidos para evitar especulação, articulou o bloco de carnaval como ato de resistência cultural e integrou a vigilância comunitária. Expressava orgulho imenso pela conquista da terra. Tornou-se posteriormente líder espiritual e fundador de uma igreja da Assembleia de Deus no bairro.'},
+  {i:'🏘️',t:'Elisa, Claudino, Jones, Fátima e Vanderlei',x:'Lideranças comunitárias que garantiram conquistas como pavimentação de ruas, regularização fundiária e infraestrutura. Nomes que nem sempre aparecem nos documentários, mas que fizeram o bairro acontecer no cotidiano de cada rua, cada vila, cada conquista.'},
+  {i:'🎬',t:'Bruno Martins — O Rosto da Evolução',x:'Ator e protagonista da trilogia "Cidade de Lona", "Cidade de Madeira" e "Cidade de Concreto". Deu rosto e voz à transformação do bairro ao longo de 35 anos de história documentada.'},
+  {i:'🍲',t:'O Sopão do Francisco Portella',x:'Um dos marcos da solidariedade prática: Francisco Portella transformava doações em refeições quentes para centenas de famílias nos momentos mais difíceis dos primeiros anos. A caridade como forma de resistência.'},
+  {i:'👩',t:'Marly da Silva — Liderança Feminina',x:'Liderança feminina do MNLM que transformou seu sofrimento pessoal em compromisso com as crianças vulneráveis. Sua mobilização gerou o Projeto Renacer (UFSM) e, indiretamente, a Creche Sinos de Belém.'},
+  {s:true,c:'cf',l:'🙏 PROJETOS SOCIAIS · FÉ · PROMOÇÃO HUMANA'},
+  {i:'🙏',t:'Projeto Francisco Espinelli',x:'Centro espírita de apoio à dignidade humana — educação e amparo social para famílias em vulnerabilidade. Um pilar silencioso e constante no cuidado da comunidade, presente quando mais se precisa.'},
+  {i:'🥖',t:'Projeto Pão da Vida',x:'Inaugurado em 18 de fevereiro de 2026 na Comunidade São Marcelino Champagnat. Iniciativa do Padre Rogério e Bispo Dom Leomar, coordenada pelas Sras. Elenir e Mariza — no mesmo solo onde nasceu o primeiro Centro Ecuménico.'},
+  {i:'👶',t:'Pastoral da Criança — 60 Famílias',x:'Implantada em 2009 na Comunidade São Marcelino Champagnat. Atende 60 famílias com visitas domiciliares e encontros mensais de monitoramento nutricional e saúde infantil.'},
+  {i:'⛪',t:'Padre Irineu Ortiz e Padre Carlos Menegáis',x:'O Padre Irineu Ortiz, pároco da Paróquia São João Evangelista, e o Padre Carlos Menegáis, Vigário Auxiliar, atuaram juntos com a Irmã Terezinha Ófima. Segundo depoimentos em documentários históricos, o Padre Irineu abriu as portas da paróquia, acolheu as famílias antes do deslocamento e utilizou seu próprio veículo para transportar crianças e pertences até a fazenda na madrugada da ocupação. Uma entrega humana que vai muito além da missão religiosa.'},
+  {i:'📖',t:'CEBI — Motor da Ação Social',x:'O Centro de Estudos Bíblicos Ecuménicos foi onde a fé se transformou em ação: a decisão de construir a Creche Sinos de Belém, de instalar o Centro Ecuménico, de agir em favor da vida cotidiana das famílias.'},
+  {i:'🇮🇹',t:'O Padre Italiano que Cruzou Oceanos',x:'Um padre italiano falecido deixou R$7.000 para ajudar alguém na América Latina pela Paróquia São João Evangelista. Esse recurso foi o capital inicial da Creche Sinos de Belém — um gesto de solidariedade que atravessou continentes.'},
+  {s:true,c:'cs',l:'🌆 RESISTÊNCIA · HISTÓRIA · MEMÓRIA'},
+  {i:'🏆',t:'CUFA RS — Praça CEU Sandra Feltrin',x:'A CUFA RS (Central Única das Favelas) promove a inclusão social e o desenvolvimento comunitário de jovens e adultos em situação de vulnerabilidade. Com foco no protagonismo juvenil, oferece projetos gratuitos nas áreas de esporte, robótica, dança, cultura e qualificação profissional. O polo principal de atividades está na Praça CEU Sandra Feltrin — um espaço de inovação, cidadania e transformação social para a comunidade.'},
+  {i:'🎭',t:'O Bloco de Carnaval — Resistência Cultural',x:'Como reação ao estigma de "vagabundos" e "marginais" imposto pela imprensa e pela elite conservadora, os moradores criaram um bloco de carnaval. Carlos Alberto Souza Martins articulou a burocracia. O samba-enredo criticava políticos que apareciam em época de eleição e sumiam depois, com o refrão: "Só me chama de sem-teto, seu doutor, que não vai lá / O que falta é água e luz, o senhor mande botar." A cultura como ferramenta de denúncia e dignidade.'},
+  {i:'🌙',t:'38 Famílias na Madrugada — Os Dados Exatos',x:'Documentos históricos registram que foram exatamente 38 famílias que participaram da ação direta na madrugada de 7 de dezembro de 1991. Os grupos saíram por volta de 1h30, usando velas para manter o sigilo. Os primeiros chegaram ao terreno às 2h10 da manhã. Ao amanhecer havia 10 a 12 barracas montadas. Em dias, o número saltou de centenas para milhares.'},
+  {i:'💰',t:'Alta Inflação e Crise de Moradia',x:'A ocupação foi motivada por uma severa crise socioeconômica. A hiperinflação e as constantes mudanças de moeda faziam os aluguéis serem reajustados drasticamente a cada seis meses, tornando a moradia inacessível para as famílias mais vulneráveis. Ocupar terras devolutas em débito com o Estado era, para o MNLM, uma resposta legítima a este colapso social.'},
+  {i:'🔐',t:'Cambona e Chaleira — As Senhas da Segurança',x:'Com a polícia proibida de entrar na parte alta da ocupação, a comunidade criou seu próprio sistema de segurança com cerca de 15 pessoas. Patrulhavam as ruas após as 22h usando senhas de identificação: "cambona" e "chaleira" — utensílios típicos do gaúcho. Quem não soubesse responder era identificado como estranho e podia ser expulso. A autogestão comunitária nascida da necessidade.'},
+  {i:'🚗',t:'O Fusca Azul do Padre Irineu',x:'Na madrugada da ocupação, o Padre Irineu Ortiz utilizou seu próprio Fusca azul antigo — presente de parentes da Itália — para transportar crianças e "muambas" (pertences das famílias) até o local do acampamento. Um gesto concreto de apoio pastoral que ficou registrado nos relatos históricos da comunidade.'},
+  {i:'🏛️',t:'Prefeito Farret e o Nó da Regularização',x:'O prefeito José Haidar Farret foi descrito pelas lideranças como o responsável por "desatar o nó" da titularidade. Articulou junto ao Estado a doação definitiva das terras para o Município, criando o respaldo legal para o cadastramento oficial das famílias e abrindo caminho para a emissão de escrituras que começaria em 2019.'},
+  {i:'🤝',t:'MNLM — O Planejamento que fez a Diferença',x:'O Movimento Nacional de Luta pela Moradia transformou o improviso em planejamento. Dois anos de reuniões discretas resultaram numa ocupação organizada em quatro etapas: preparação com lonas e botijões, concentração na Igreja às 22h, deslocamento em piquetes às 1h30, chegada ao terreno às 2h10. Uma operação democrática e juridicamente fundamentada.'},
+  {i:'🌆',t:'As 7 Vilas da Nova Santa Marta',x:'Vila 7 de Dezembro, Alto da Boa Vista, 10 de Outubro, 18 de Abril, Loteamento Marista, Núcleo Central e Pôr do Sol — sete comunidades com identidades próprias, cada uma com sua história, suas lideranças e seu jeito de ser.'},
+  {i:'🪚',t:'Casas Erguidas na Madrugada',x:'Na fase da madeira, moradores relatam noites inteiras de marteladas, tábuas de pinus, caminhões com madeira nova e usada. Às vezes, de noite não havia casa; no outro dia, já existia a estrutura. A pressa era por proteção, segurança e dignidade.'},
+  {i:'🥾',t:'Barro, Galochas e Preconceito',x:'Antes das melhorias urbanas, crianças pulavam sangas para chegar à escola e trabalhadores trocavam galochas por sapatos na parada de ônibus. O barro não era só dificuldade física: também gerava preconceito contra quem chegava sujo aos espaços da cidade.'},
+  {i:'🏗️',t:'A Luta Continua em Cada Casa',x:'O vídeo mostra que a construção da moradia segue viva: moradores atuais ainda compram terreno parcelado, levantam casa aos poucos e buscam sair do aluguel. A história da Nova Santa Marta não ficou presa ao passado; ela continua em cada nova parede.'},
+  {i:'📊',t:'De 38 Famílias a 25 Mil Pessoas',x:'De 38 famílias na madrugada de 7 de dezembro de 1991 a cerca de 25 mil moradores em 2026. Uma cidade dentro de uma cidade — nascida de uma operação planejada minuto a minuto que transformou um campo de gado num bairro completo.'},
+  {i:'🏡',t:'Casas que Têm Rosto — Identidade em Alvenaria',x:'Fernando Menezes disse: "Nem uma casa é igual a outra." Na Nova Santa Marta, cada residência foi construída pelas mãos da família que nela vive. Cores, formas e ampliações ao longo do tempo — a identidade de cada família impressa em tijolo e argamassa.'},
+  {i:'👩‍🔬',t:'Suelen Gonçalves — Da Lona para a UFRGS',x:'Chegou criança de Uruguaiana em 1995. Cresceu sem escola no bairro. Formou-se em Ciências Sociais (UFSM) e é doutoranda em Sociologia (UFRGS). Pesquisa as mesmas desigualdades que viveu. "A ocupação me fez quem eu sou."'},
+  {i:'🌟',t:'35 Anos — Referência da América Latina',x:'A Nova Santa Marta é citada em estudos internacionais de urbanismo como um dos maiores exemplos de ocupação organizada da América Latina. De barracas de lona a um bairro de concreto, com Colégio completo, CUFA, projetos sociais e identidade própria.'}
+];
+
+// ── INTROS ───────────────────────────────────
+var INTROS=[null,
+  {c:'il',i:'⛺',n:'FASE 1',t:'Cidade de Lona',p:'7 Dez. 1991 — 1993',d:'35 perguntas sobre a madrugada histórica, as barracas, as bicas e os primeiros dias da ocupação.',fatos:['📅 7 de dezembro de 1991 — A noite que mudou tudo','🚶 Grupos separados para não alertar a polícia','⛺ Lona preta, estaca e barbante como primeiro lar','💧 Água no Jockey Club, depois nas bicas coletivas','🎲 Sorteio democrático — nenhum líder privilegiado'],r:'Fase Um. Cidade de Lona. A madrugada de sete de dezembro de mil novecentos e noventa e um. Famílias caminham pela Região Oeste. As lonas são erguidas. Uma comunidade nasce.'},
+  {c:'im',i:'🏠',n:'FASE 2',t:'Cidade de Madeira',p:'1994 — 2006',d:'35 perguntas sobre ecumenismo, creche, escolas e a consolidação do bairro de madeira.',fatos:['⛪ Centro Ecuménico — o pulmão da comunidade','🙏 Uma oração definiu onde fica o Colégio Marista hoje','👶 Crianças gritando "queremos creche!" inspiraram a Sinos de Belém','📚 Escola Marista em 1996 — primeira escola do bairro','🛣️ Primeira rua asfaltada — Rua Mallman Filho (2003)'],r:'Fase Dois. Cidade de Madeira. O ecumenismo une diferentes religiões. A creche nasce de uma doação italiana. A escola Marista abre suas portas. O bairro de madeira toma forma.'},
+  {c:'ip',i:'🏙️',n:'FASE 3',t:'Cidade de Concreto',p:'2007 — 2026',d:'35 perguntas sobre PAC, CMID, regularização fundiária e o Colégio Marista com Ensino Médio.',fatos:['💰 R$42 milhões do PAC — a maior obra da história do bairro','💻 CMID Car e Robótica Livre no FISL e Latinoware','📜 Escrituras entregues em 2019 — quase 3 décadas depois','🌳 Praça Sandra Feltrin — memória que vira lazer','🎓 Colégio Marista inaugura Ensino Médio em 2026'],r:'Fase Três. Cidade de Concreto. O PAC chega. A robótica da periferia vai ao mundo. As escrituras são entregues. O Colégio Marista completa o ciclo. Trinta e cinco anos de conquista.'}
+];
+
+// ── FUNÇÕES ──────────────────────────────────
+function irFase(n){
+  ir('tela'+n);
+  gerarQuiz(n);
+  setTimeout(function(){falar(INTROS[n].r);},500);
+}
+
+function abrirIntro(n){
+  var d=INTROS[n];if(!d)return;
+  var ov=document.getElementById('introOv');
+  var fatosHtml=d.fatos.map(function(f){return '<div class="io-fato"><span>'+f+'</span></div>';}).join('');
+  ov.innerHTML=
+    '<div class="io-ic">'+d.i+'</div>'+
+    '<div class="io-num">'+d.n+'</div>'+
+    '<div class="io-tit">'+d.t+'</div>'+
+    '<div class="io-per">'+d.p+'</div>'+
+    '<div class="io-desc">'+d.d+'</div>'+
+    '<div class="io-fatos">'+fatosHtml+'</div>'+
+    '<button class="btn-start" id="btnIniciar">INICIAR QUIZ ▶</button>';
+  ov.className='intro-ov ativo '+d.c;
+  document.getElementById('btnIniciar').addEventListener('click',function(){
+    ov.classList.remove('ativo');
+    irFase(n);
+  });
+  setTimeout(function(){falar(d.r);},600);
+}
+
+// ── MEMORIAL ─────────────────────────────────
+function irMemorial(){
+  var g=document.getElementById('gME');g.innerHTML='';
+  MEMORIAL.forEach(function(m){
+    if(m.sep){
+      var sep=document.createElement('div');sep.className='mem-sep';sep.textContent=m.l;g.appendChild(sep);
+      var grid=document.createElement('div');grid.className='mem-grid';grid.id='mg_'+MEMORIAL.indexOf(m);g.appendChild(grid);return;
+    }
+    var grids=g.querySelectorAll('.mem-grid');
+    var lastGrid=grids[grids.length-1];
+    if(!lastGrid)return;
+    var card=document.createElement('div');card.className='mem-card';
+    card.innerHTML='<div class="mem-ico">'+m.i+'</div><div class="mem-tit">'+m.t+'</div><div class="mem-ano">'+m.a+'</div><div class="mem-txt">'+m.x+'</div><button class="mem-audio">🔊 OUVIR</button>';
+    var btn=card.querySelector('.mem-audio');
+    btn.addEventListener('click',function(e){e.stopPropagation();falar(m.t+'. '+m.x);});
+    card.addEventListener('click',function(e){
+      if(e.target===btn||btn.contains(e.target))return;
+      document.querySelectorAll('.mem-card.aberto').forEach(function(el){if(el!==card)el.classList.remove('aberto');});
+      card.classList.toggle('aberto');
+      if(card.classList.contains('aberto'))setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
+    });
+    lastGrid.appendChild(card);
+  });
+  ir('telaME');
+  setTimeout(function(){falar('Memorial da Nova Santa Marta. Memórias organizadas por período histórico. Clique em cada card para descobrir.');},500);
+}
+
+// ── CONQUISTAS ────────────────────────────────
+function irConquistas(){
+  var g=document.getElementById('gCQ');g.innerHTML='';
+  CONQUISTAS.forEach(function(c){
+    var d=document.createElement('div');d.className='cqt-item';
+    d.innerHTML='<div class="cqt-ico">'+c.i+'</div><div class="cqt-nm">'+c.n+'</div><div class="cqt-yr">'+c.y+'</div><div class="cqt-desc">'+c.d+'</div><button class="cqt-audio">🔊 OUVIR</button>';
+    var btn=d.querySelector('.cqt-audio');
+    btn.addEventListener('click',function(e){e.stopPropagation();falar(c.n+'. '+c.d);});
+    d.addEventListener('click',function(e){
+      if(e.target===btn||btn.contains(e.target))return;
+      document.querySelectorAll('.cqt-item.aberto').forEach(function(el){if(el!==d)el.classList.remove('aberto');});
+      d.classList.toggle('aberto');
+      if(d.classList.contains('aberto'))setTimeout(function(){d.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
+    });
+    g.appendChild(d);
+  });
+  ir('telaCQ');
+  setTimeout(function(){falar('Conquistas da Nova Santa Marta. Clique em cada conquista para expandir e ouvir sua história.');},500);
+}
+
+// ── CURIOSIDADES ──────────────────────────────
+function irCuriosidades(){
+  var g=document.getElementById('gCU');g.innerHTML='';
+  CURIOSIDADES.forEach(function(c){
+    if(c.s){
+      var sep=document.createElement('div');sep.className='cut-sep '+(c.c||'');sep.textContent=c.l;g.appendChild(sep);return;
+    }
+    var d=document.createElement('div');d.className='cut-card';
+    d.innerHTML='<div class="cut-ico">'+c.i+'</div><div class="cut-tit">'+c.t+'</div><div class="cut-txt">'+c.x+'</div><button class="cut-audio">🔊 OUVIR</button>';
+    var btn=d.querySelector('.cut-audio');
+    btn.addEventListener('click',function(e){e.stopPropagation();falar(c.t+'. '+c.x);});
+    d.addEventListener('click',function(){
+      document.querySelectorAll('.cut-card.aberto').forEach(function(el){if(el!==d)el.classList.remove('aberto');});
+      d.classList.toggle('aberto');
+      if(d.classList.contains('aberto'))setTimeout(function(){d.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
+    });
+    g.appendChild(d);
+  });
+  ir('telaCU');
+  setTimeout(function(){falar('Curiosidades da Nova Santa Marta. Clique em cada card para descobrir.');},500);
+}
+
+// ── DOMContentLoaded ─────────────────────────
+document.addEventListener('DOMContentLoaded',function(){
+  synth=window.speechSynthesis||null;
+  audioEl=document.getElementById('audioInd');
+  estrelas();
+  if(synth){synth.getVoices();synth.onvoiceschanged=function(){synth.getVoices();};}
+
+  // Modal overlay fecha ao clicar fora
+  document.getElementById('modalBg').addEventListener('click',function(e){if(e.target===document.getElementById('modalBg'))fecharModal();});
+
+  // CAPA — Fases
+  document.getElementById('btnF1').addEventListener('click',function(){abrirIntro(1);});
+  document.getElementById('btnF2').addEventListener('click',function(){abrirIntro(2);});
+  document.getElementById('btnF3').addEventListener('click',function(){abrirIntro(3);});
+
+  // CAPA — Portal
+  document.getElementById('btnCQ').addEventListener('click',irConquistas);
+  document.getElementById('btnCU').addEventListener('click',irCuriosidades);
+  document.getElementById('btnME').addEventListener('click',irMemorial);
+
+  // Voltar
+  document.getElementById('v1').addEventListener('click',function(){ir('capa');pararAudio();});
+  document.getElementById('v2').addEventListener('click',function(){ir('capa');pararAudio();});
+  document.getElementById('v3').addEventListener('click',function(){ir('capa');pararAudio();});
+  document.getElementById('vCQ').addEventListener('click',function(){ir('capa');pararAudio();});
+  document.getElementById('vCU').addEventListener('click',function(){ir('capa');pararAudio();});
+  document.getElementById('vME').addEventListener('click',function(){ir('capa');pararAudio();});
+
+  // Personagens
+  document.getElementById('bp_fernando').addEventListener('click',function(){verPersonagem('fernando');});
+  document.getElementById('bp_pedro').addEventListener('click',function(){verPersonagem('pedro');});
+  document.getElementById('bp_emilia').addEventListener('click',function(){verPersonagem('emilia');});
+
+  // Fase → próxima fase
+  document.getElementById('irF2b').addEventListener('click',function(){abrirIntro(2);});
+  document.getElementById('irF3b').addEventListener('click',function(){abrirIntro(3);});
+  document.getElementById('irCQb').addEventListener('click',irConquistas);
+
+  // Boas-vindas
+  setTimeout(function(){falar('Bem-vindo ao game Nova Santa Marta, trinta e cinco anos de Luta, Fé e Conquista. Escolha uma fase para iniciar o quiz histórico, ou explore o Memorial, as Conquistas e as Curiosidades da comunidade.');},1500);
+});
+</script>
+</body>
+</html>
