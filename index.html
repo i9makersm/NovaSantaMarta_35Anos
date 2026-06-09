@@ -532,38 +532,57 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
 // ═══════════════════════════════════════════
 // NOVA SANTA MARTA 35 ANOS — JavaScript
 // ═══════════════════════════════════════════
+console.log('NovaSantaMarta TTS Google pt-BR v2026-06-09-002');
 
-// ── Áudio ──────────────────────────────────
-var synth=null, audioEl=null;
+// ── Áudio — Google Translate TTS cross-browser ─────────────────────
+var _ttsAudio=null, audioEl=null, _ttsUserGesture=false;
 function limpar(t){return(t||'').replace(/<[^>]+>/g,' ').replace(/(\d{4})\+/g,'$1').replace(/\+/g,'').replace(/[→]/g,' para ').replace(/[·—]/g,', ').replace(/\s+/g,' ').trim();}
+function _ttsGetAudio(){
+  if(!_ttsAudio){
+    _ttsAudio=new Audio();
+    _ttsAudio.preload='auto';
+    _ttsAudio.playsInline=true;
+  }
+  return _ttsAudio;
+}
 function pararAudio(){
-  if(synth)synth.cancel();
+  if(_ttsAudio){_ttsAudio.pause();_ttsAudio.currentTime=0;}
   if(audioEl)audioEl.classList.remove('on');
 }
-function vozPadraoPtBr(){
-  if(!synth)return null;
-  var vz=synth.getVoices();
-  var preferidas=['Luciana','Francisca','Maria','Vitória','Vitoria','Google português do Brasil','Microsoft Maria'];
-  for(var p=0;p<preferidas.length;p++){
-    for(var i=0;i<vz.length;i++){
-      if((vz[i].lang||'').toLowerCase().startsWith('pt')&&(vz[i].name||'').toLowerCase().indexOf(preferidas[p].toLowerCase())!==-1)return vz[i];
-    }
+function _ttsChunk(t,n){
+  if(t.length<=n)return[t];
+  var c=[],r=t.trim();
+  while(r.length>0){
+    if(r.length<=n){c.push(r);break;}
+    var x=r.lastIndexOf(',',n);
+    if(x<60)x=r.lastIndexOf(' ',n);
+    if(x<10)x=n;
+    c.push(r.slice(0,x).trim());
+    r=r.slice(x).trim();
   }
-  for(var j=0;j<vz.length;j++)if((vz[j].lang||'').toLowerCase()==='pt-br')return vz[j];
-  for(var k=0;k<vz.length;k++)if((vz[k].lang||'').toLowerCase().startsWith('pt'))return vz[k];
-  return null;
+  return c;
+}
+function _ttsPlay(c,i){
+  if(i>=c.length){if(audioEl)audioEl.classList.remove('on');return;}
+  var a=_ttsGetAudio();
+  a.src='https://translate.google.com/translate_tts?ie=UTF-8&tl=pt-BR&client=tw-ob&q='+encodeURIComponent(c[i]);
+  a.volume=1;
+  a.playbackRate=0.92;
+  a.onended=function(){_ttsPlay(c,i+1);};
+  a.onerror=function(){_ttsPlay(c,i+1);};
+  if(audioEl)audioEl.classList.add('on');
+  a.play().catch(function(){
+    if(audioEl)audioEl.classList.remove('on');
+  });
 }
 function falar(txt){
-  if(!synth)return; pararAudio();
+  pararAudio();
   var s=limpar(txt); if(!s)return;
-  setTimeout(function(){
-    var u=new SpeechSynthesisUtterance(s);
-    u.lang='pt-BR';u.rate=0.9;u.pitch=1.05;u.volume=1;
-    var voz=vozPadraoPtBr();if(voz)u.voice=voz;
-    u.onstart=function(){if(audioEl)audioEl.classList.add('on');};
-    u.onend=u.onerror=function(){if(audioEl)audioEl.classList.remove('on');};
-    synth.speak(u);
-  },80);
+  _ttsPlay(_ttsChunk(s,180),0);
+}
+function prepararAudioMobile(){
+  _ttsUserGesture=true;
+  _ttsGetAudio();
 }
 
 // ── Telas ───────────────────────────────────
@@ -2157,7 +2176,7 @@ var INTROS=[null,
 function irFase(n){
   ir('tela'+n);
   gerarQuiz(n);
-  setTimeout(function(){falar(INTROS[n].r);},500);
+  falar(INTROS[n].r);
 }
 
 function abrirIntro(n){
@@ -2177,7 +2196,7 @@ function abrirIntro(n){
     ov.classList.remove('ativo');
     irFase(n);
   });
-  setTimeout(function(){falar(d.r);},600);
+  falar(d.r);
 }
 
 // ── MEMORIAL ─────────────────────────────────
@@ -2204,7 +2223,7 @@ function irMemorial(){
     lastGrid.appendChild(card);
   });
   ir('telaME');
-  setTimeout(function(){falar('Memorial da Nova Santa Marta. Memórias organizadas por período histórico. Clique em cada card para descobrir.');},500);
+  falar('Memorial da Nova Santa Marta. Memórias organizadas por período histórico. Clique em cada card para descobrir.');
 }
 
 // ── CONQUISTAS ────────────────────────────────
@@ -2224,7 +2243,7 @@ function irConquistas(){
     g.appendChild(d);
   });
   ir('telaCQ');
-  setTimeout(function(){falar('Conquistas da Nova Santa Marta. Clique em cada conquista para expandir e ouvir sua história.');},500);
+  falar('Conquistas da Nova Santa Marta. Clique em cada conquista para expandir e ouvir sua história.');
 }
 
 // ── CURIOSIDADES ──────────────────────────────
@@ -2246,15 +2265,16 @@ function irCuriosidades(){
     g.appendChild(d);
   });
   ir('telaCU');
-  setTimeout(function(){falar('Curiosidades da Nova Santa Marta. Clique em cada card para descobrir.');},500);
+  falar('Curiosidades da Nova Santa Marta. Clique em cada card para descobrir.');
 }
 
 // ── DOMContentLoaded ─────────────────────────
 document.addEventListener('DOMContentLoaded',function(){
-  synth=window.speechSynthesis||null;
   audioEl=document.getElementById('audioInd');
   estrelas();
-  if(synth){synth.getVoices();synth.onvoiceschanged=function(){synth.getVoices();};}
+  ['pointerdown','touchstart','click'].forEach(function(ev){
+    document.addEventListener(ev,prepararAudioMobile,{capture:true,passive:true});
+  });
 
   // Modal overlay fecha ao clicar fora
   document.getElementById('modalBg').addEventListener('click',function(e){if(e.target===document.getElementById('modalBg'))fecharModal();});
@@ -2288,7 +2308,7 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('irCQb').addEventListener('click',irConquistas);
 
   // Boas-vindas
-  setTimeout(function(){falar('Bem-vindo ao site Nova Santa Marta, trinta e cinco anos de Luta, Fé e Conquista. Escolha uma fase para responder às perguntas históricas, ou explore o Memorial, as Conquistas e as Curiosidades da comunidade.');},1500);
+  // Em celulares, áudio automático no carregamento é bloqueado. As narrações começam nos botões.
 });
 </script>
 </body>
