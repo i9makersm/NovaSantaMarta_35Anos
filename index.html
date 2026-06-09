@@ -532,7 +532,7 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
 // ═══════════════════════════════════════════
 // NOVA SANTA MARTA 35 ANOS — JavaScript
 // ═══════════════════════════════════════════
-console.log('NovaSantaMarta TTS Google pt-BR v2026-06-09-002');
+console.log('NovaSantaMarta TTS Google pt-BR v2026-06-09-003');
 
 // ── Áudio — Google Translate TTS cross-browser ─────────────────────
 var _ttsAudio=null, audioEl=null, _ttsUserGesture=false;
@@ -562,10 +562,17 @@ function _ttsChunk(t,n){
   }
   return c;
 }
+function _ttsSrc(t){
+  var q=encodeURIComponent(t);
+  if(location.protocol==='file:'){
+    return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=pt-BR&client=tw-ob&q='+q;
+  }
+  return '/.netlify/functions/google-tts?q='+q;
+}
 function _ttsPlay(c,i){
   if(i>=c.length){if(audioEl)audioEl.classList.remove('on');return;}
   var a=_ttsGetAudio();
-  a.src='https://translate.google.com/translate_tts?ie=UTF-8&tl=pt-BR&client=tw-ob&q='+encodeURIComponent(c[i]);
+  a.src=_ttsSrc(c[i]);
   a.volume=1;
   a.playbackRate=0.92;
   a.onended=function(){_ttsPlay(c,i+1);};
