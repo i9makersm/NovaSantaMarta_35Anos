@@ -532,7 +532,7 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
 // ═══════════════════════════════════════════
 // NOVA SANTA MARTA 35 ANOS — JavaScript
 // ═══════════════════════════════════════════
-console.log('NovaSantaMarta TTS Google pt-BR v2026-06-09-004');
+console.log('NovaSantaMarta TTS Google pt-BR v2026-06-09-005');
 
 // ── Áudio — Google Translate TTS cross-browser ─────────────────────
 var _ttsAudio=null, audioEl=null, _ttsUserGesture=false, _ttsSeq=0, _ttsTimer=null;
@@ -580,7 +580,7 @@ function _ttsPlay(c,i){
   _ttsClearTimer();
   a.src=_ttsSrc(c[i]);
   a.volume=1;
-  a.playbackRate=0.96;
+  a.playbackRate=1.00;
   function next(){if(seq!==_ttsSeq)return;_ttsClearTimer();_ttsPlay(c,i+1);}
   a.onended=next;
   a.onerror=next;
