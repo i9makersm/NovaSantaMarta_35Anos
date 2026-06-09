@@ -532,10 +532,10 @@ html,body{height:100%;font-family:var(--fb);background:#060812;color:var(--branc
 // ═══════════════════════════════════════════
 // NOVA SANTA MARTA 35 ANOS — JavaScript
 // ═══════════════════════════════════════════
-console.log('NovaSantaMarta TTS Google pt-BR v2026-06-09-003');
+console.log('NovaSantaMarta TTS Google pt-BR v2026-06-09-004');
 
 // ── Áudio — Google Translate TTS cross-browser ─────────────────────
-var _ttsAudio=null, audioEl=null, _ttsUserGesture=false;
+var _ttsAudio=null, audioEl=null, _ttsUserGesture=false, _ttsSeq=0, _ttsTimer=null;
 function limpar(t){return(t||'').replace(/<[^>]+>/g,' ').replace(/(\d{4})\+/g,'$1').replace(/\+/g,'').replace(/[→]/g,' para ').replace(/[·—]/g,', ').replace(/\s+/g,' ').trim();}
 function _ttsGetAudio(){
   if(!_ttsAudio){
@@ -545,7 +545,12 @@ function _ttsGetAudio(){
   }
   return _ttsAudio;
 }
+function _ttsClearTimer(){
+  if(_ttsTimer){clearTimeout(_ttsTimer);_ttsTimer=null;}
+}
 function pararAudio(){
+  _ttsSeq++;
+  _ttsClearTimer();
   if(_ttsAudio){_ttsAudio.pause();_ttsAudio.currentTime=0;}
   if(audioEl)audioEl.classList.remove('on');
 }
@@ -571,14 +576,18 @@ function _ttsSrc(t){
 }
 function _ttsPlay(c,i){
   if(i>=c.length){if(audioEl)audioEl.classList.remove('on');return;}
-  var a=_ttsGetAudio();
+  var a=_ttsGetAudio(), seq=_ttsSeq;
+  _ttsClearTimer();
   a.src=_ttsSrc(c[i]);
   a.volume=1;
-  a.playbackRate=0.92;
-  a.onended=function(){_ttsPlay(c,i+1);};
-  a.onerror=function(){_ttsPlay(c,i+1);};
+  a.playbackRate=0.96;
+  function next(){if(seq!==_ttsSeq)return;_ttsClearTimer();_ttsPlay(c,i+1);}
+  a.onended=next;
+  a.onerror=next;
+  _ttsTimer=setTimeout(next,Math.min(35000,Math.max(9000,c[i].length*150)));
   if(audioEl)audioEl.classList.add('on');
   a.play().catch(function(){
+    _ttsClearTimer();
     if(audioEl)audioEl.classList.remove('on');
   });
 }
